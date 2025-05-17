@@ -11,10 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-PixelVrtic-23b4d984-e875-47fb-a424-8b2baac5a121")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PixelVrtic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ebcef17209e9cc1760fd6ebd254601b3bb32b2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f025c5df4e0438f661398eaa9f8b80c99ba65ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("PixelVrtic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PixelVrtic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

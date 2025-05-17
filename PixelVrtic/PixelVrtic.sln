@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelVrtic", "PixelVrtic\PixelVrtic.csproj", "{2F83A7EE-16F3-4F8A-A704-E49735398078}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelVrtic", "PixelVrtic\PixelVrtic.csproj", "{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F83A7EE-16F3-4F8A-A704-E49735398078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F83A7EE-16F3-4F8A-A704-E49735398078}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F83A7EE-16F3-4F8A-A704-E49735398078}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F83A7EE-16F3-4F8A-A704-E49735398078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D164CF74-2619-4321-94F1-71E8F356A867}
+		SolutionGuid = {1A5444AC-DC67-4B24-B2DF-1BF15E5B52B3}
 	EndGlobalSection
 EndGlobal
