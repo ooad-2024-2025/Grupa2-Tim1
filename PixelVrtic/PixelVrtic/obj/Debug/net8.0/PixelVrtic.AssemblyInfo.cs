@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PixelVrtic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f025c5df4e0438f661398eaa9f8b80c99ba65ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb01e8902626c438caf3b81e083b292c6a24b11b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PixelVrtic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PixelVrtic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
