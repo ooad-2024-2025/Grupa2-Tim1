@@ -1,0 +1,49 @@
+﻿@model PixelVrtic.Models.Obavijest
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Obavijest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="naslov" class="control-label"></label>
+                <input asp-for="naslov" class="form-control" />
+                <span asp-validation-for="naslov" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tekst" class="control-label"></label>
+                <input asp-for="tekst" class="form-control" />
+                <span asp-validation-for="tekst" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datum" class="control-label"></label>
+                <input asp-for="datum" class="form-control" />
+                <span asp-validation-for="datum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idAutora" class="control-label"></label>
+                <select asp-for="idAutora" class="form-control" asp-items="ViewBag.idAutora"></select>
+                <span asp-validation-for="idAutora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

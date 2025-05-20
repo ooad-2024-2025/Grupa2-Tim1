@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PixelVrtic
 build_property.RootNamespace = PixelVrtic
@@ -24,12 +32,132 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Aktivnost/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWt0aXZub3N0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Aktivnost/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWt0aXZub3N0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Aktivnost/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWt0aXZub3N0XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Aktivnost/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWt0aXZub3N0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Aktivnost/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWt0aXZub3N0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Dijete/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlqZXRlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Dijete/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlqZXRlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Dijete/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlqZXRlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Dijete/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlqZXRlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Dijete/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlqZXRlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Grupa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Grupa/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cGFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Grupa/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cGFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Grupa/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cGFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Grupa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Korisnik/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Korisnik/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Korisnik/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Korisnik/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Korisnik/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Obavijest/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JhdmlqZXN0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Obavijest/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JhdmlqZXN0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Obavijest/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JhdmlqZXN0XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Obavijest/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JhdmlqZXN0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Obavijest/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JhdmlqZXN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Prisustvo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpc3VzdHZvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Prisustvo/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpc3VzdHZvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Prisustvo/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpc3VzdHZvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Prisustvo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpc3VzdHZvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Prisustvo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpc3VzdHZvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Administrator/ooad/Grupa2-Tim1/PixelVrtic/PixelVrtic/Views/Shared/Error.cshtml]

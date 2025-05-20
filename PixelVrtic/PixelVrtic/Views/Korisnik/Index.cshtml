@@ -1,0 +1,137 @@
+﻿@model IEnumerable<PixelVrtic.Models.Korisnik>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lozinka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uloga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.brojTelefona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uplaceno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idGrupe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.datumRodjenja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mjestoRodjenja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fotografija)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.univerzitet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diploma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pocetakObrazovanja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.krajObrazovanja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.grad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.naknada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lozinka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uloga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brojTelefona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uplaceno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idGrupe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datumRodjenja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mjestoRodjenja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fotografija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.univerzitet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diploma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pocetakObrazovanja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.krajObrazovanja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.naknada)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

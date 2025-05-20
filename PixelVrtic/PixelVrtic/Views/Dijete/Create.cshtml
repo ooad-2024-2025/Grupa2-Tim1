@@ -1,0 +1,71 @@
+﻿@model PixelVrtic.Models.Dijete
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Dijete</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ime" class="control-label"></label>
+                <input asp-for="ime" class="form-control" />
+                <span asp-validation-for="ime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prezime" class="control-label"></label>
+                <input asp-for="prezime" class="form-control" />
+                <span asp-validation-for="prezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datumRodjenja" class="control-label"></label>
+                <input asp-for="datumRodjenja" class="form-control" />
+                <span asp-validation-for="datumRodjenja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mjestoRodenja" class="control-label"></label>
+                <input asp-for="mjestoRodenja" class="form-control" />
+                <span asp-validation-for="mjestoRodenja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JMBG" class="control-label"></label>
+                <input asp-for="JMBG" class="form-control" />
+                <span asp-validation-for="JMBG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="grupaId" class="control-label"></label>
+                <select asp-for="grupaId" class ="form-control" asp-items="ViewBag.grupaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="zdravstveneNapomene" class="control-label"></label>
+                <input asp-for="zdravstveneNapomene" class="form-control" />
+                <span asp-validation-for="zdravstveneNapomene" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fotografija" class="control-label"></label>
+                <input asp-for="fotografija" class="form-control" />
+                <span asp-validation-for="fotografija" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="roditeljId" class="control-label"></label>
+                <select asp-for="roditeljId" class ="form-control" asp-items="ViewBag.roditeljId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

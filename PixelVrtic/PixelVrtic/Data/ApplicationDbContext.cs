@@ -30,22 +30,21 @@ namespace PixelVrtic.Data
             base.OnModelCreating(builder);
             builder.Entity<Aktivnost>()
                 .HasOne(a => a.Korisnik)
-                .WithMany() // or .WithMany(k => k.Aktivnosti) if navigation property exists
+                .WithMany() 
                 .HasForeignKey(a => a.idKorisnika)
-                .OnDelete(DeleteBehavior.Restrict);  // <- This disables cascade delete here
+                .OnDelete(DeleteBehavior.Restrict); 
 
             builder.Entity<Aktivnost>()
                 .HasOne(a => a.Grupa)
                 .WithMany()
                 .HasForeignKey(a => a.idGrupe)
-                .OnDelete(DeleteBehavior.Cascade); // keep cascade here if you want
+                .OnDelete(DeleteBehavior.Cascade); 
 
-            // Configure Dijete -> Korisnik (roditeljId) FK with no cascade delete
             builder.Entity<Dijete>()
                 .HasOne(d => d.Korisnik)
-                .WithMany() // or WithMany(k => k.Djeca) if you have navigation property
+                .WithMany() 
                 .HasForeignKey(d => d.roditeljId)
-                .OnDelete(DeleteBehavior.Restrict); // Disable cascade delete here
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
