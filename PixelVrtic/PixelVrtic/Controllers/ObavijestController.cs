@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,13 +12,17 @@ using PixelVrtic.Models;
 
 namespace PixelVrtic.Controllers
 {
+    [Authorize]
+
     public class ObavijestController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<Korisnik> _userManager;
 
-        public ObavijestController(ApplicationDbContext context)
+        public ObavijestController(ApplicationDbContext context, UserManager<Korisnik> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Obavijest
@@ -48,7 +54,7 @@ namespace PixelVrtic.Controllers
         // GET: Obavijest/Create
         public IActionResult Create()
         {
-            ViewData["idAutora"] = new SelectList(_context.Korisnik, "id", "id");
+            ViewData["idAutora"] = new SelectList(_userManager.Users, "Id", "ime");
             return View();
         }
 
@@ -57,17 +63,26 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,naslov,tekst,datum,idAutora")] Obavijest obavijest)
+        public async Task<IActionResult> Create(Obavijest obavijest)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+                return BadRequest("Nije moguće utvrditi autora.");
+
+            obavijest.idAutora = currentUser.Id;
+            obavijest.datum = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 _context.Add(obavijest);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idAutora"] = new SelectList(_context.Korisnik, "id", "id", obavijest.idAutora);
             return View(obavijest);
         }
+
+
+
 
         // GET: Obavijest/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -82,7 +97,7 @@ namespace PixelVrtic.Controllers
             {
                 return NotFound();
             }
-            ViewData["idAutora"] = new SelectList(_context.Korisnik, "id", "id", obavijest.idAutora);
+            ViewData["idAutora"] = new SelectList(_userManager.Users, "Id", "ime", obavijest.idAutora);
             return View(obavijest);
         }
 
@@ -118,7 +133,7 @@ namespace PixelVrtic.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idAutora"] = new SelectList(_context.Korisnik, "id", "id", obavijest.idAutora);
+            ViewData["idAutora"] = new SelectList(_userManager.Users, "Id", "ime", obavijest.idAutora);
             return View(obavijest);
         }
 
@@ -159,6 +174,11 @@ namespace PixelVrtic.Controllers
         private bool ObavijestExists(int id)
         {
             return _context.Obavijest.Any(e => e.id == id);
+        }
+
+        public IActionResult Choice()
+        {
+            return View();
         }
     }
 }

@@ -1,83 +1,171 @@
-﻿@model IEnumerable<PixelVrtic.Models.Dijete>
+﻿<!-- Updated Index.cshtml to match UI from the provided image -->
+@model IEnumerable<PixelVrtic.Models.Dijete>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Djeca";
+    var selectedGroup = Model.FirstOrDefault()?.grupa?.naziv ?? "Sve grupe";
+}
+<h1>Djeca - @selectedGroup</h1>
+
+@if (Context.Request.Query.ContainsKey("idGrupe"))
+{
+    <a asp-action="Index" class="btn btn-sm btn-outline-secondary">Prikaži sve grupe</a>
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+<div class="page-header">
+    <h1>Djeca</h1>
+    <div class="header-actions">
+        <input type="text" placeholder="Pretraži djecu" class="search-bar" />
+        <a asp-action="Create" class="btn-add">+ Dodaj dijete</a>
+    </div>
+</div>
+
+<table class="children-table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.prezime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.datumRodjenja)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.mjestoRodenja)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JMBG)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.grupa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.zdravstveneNapomene)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fotografija)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Korisnik)
-            </th>
-            <th></th>
+            <th><input type="checkbox" /></th>
+            <th>Ime</th>            <th>Datum pridruživanja</th>
+            <th>Ime roditelja</th>
+            <th>Grad</th>
+            <th>Kontakt</th>
+            <th>Grupa</th>
+            <th>Uredi</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.prezime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.datumRodjenja)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mjestoRodenja)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JMBG)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.grupa.id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.zdravstveneNapomene)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fotografija)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Korisnik.id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td><div class="child-avatar"></div> @item.ime @item.prezime</td>
+                <td>@item.datumRodjenja</td> <!-- static for now -->
+                <td>@item.Korisnik?.ime @item.Korisnik?.prezime</td>
+                <td>@item.mjestoRodenja</td> <!-- static for now -->
+                <td>
+                    <span class="icon-phone">
+                        <a href="tel:@item.Korisnik?.brojTelefona" class="me-2"><i class="bi bi-telephone"></i></a>
+                    </span>
+                    <span class="icon-mail"><a href="mailto:@item.Korisnik?.Email"><i class="bi bi-envelope"></i></a></span>
+                </td>
+                <td>
+                    <span class="group-label group-color-@item.grupa.id">@item.grupa.naziv</span>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id" style="text-decoration: none; color: gray; font-size: 2em;">...</a>
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>
+
+<div class="pagination">
+    <button class="page-btn active">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+</div>
+
+<style>
+    body {
+        background-color: #fde9f0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .search-bar {
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    .btn-add {
+        background-color: #d6f1ff;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .children-table {
+        background-color: #ffffff;
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+        .children-table th, .children-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+    .child-avatar {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #999;
+        margin-right: 0.5rem;
+    }
+
+    .icon-phone, .icon-mail {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        margin-right: 4px;
+    }
+
+    .group-label {
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .group-color-1 {
+        background-color: #f87171;
+    }
+    /* Example group colors */
+    .group-color-2 {
+        background-color: #fbbf24;
+    }
+
+    .group-color-3 {
+        background-color: #60a5fa;
+    }
+
+    .group-color-4 {
+        background-color: #34d399;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+    }
+
+    .page-btn {
+        background-color: #f0f0f0;
+        border: none;
+        margin: 0 0.25rem;
+        padding: 0.5rem 1rem;
+        border-radius: 50%;
+    }
+
+        .page-btn.active {
+            background-color: #c7f9ff;
+            font-weight: bold;
+        }
+</style>

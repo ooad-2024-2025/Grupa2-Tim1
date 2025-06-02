@@ -1,53 +1,76 @@
 ﻿@model IEnumerable<PixelVrtic.Models.Obavijest>
-
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Obavještenja";
 }
 
-<h1>Index</h1>
+<style>
+    body {
+        background-color: #fde9f1;
+        font-family: 'Poppins', sans-serif;
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.naslov)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.tekst)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.datum)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Korisnik)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.naslov)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tekst)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.datum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Korisnik.id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .obavijest-card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        transition: transform 0.2s;
+    }
+
+        .obavijest-card:hover {
+            transform: scale(1.03);
+        }
+
+    .obavijest-title {
+        font-weight: 700;
+        color: #2d2d5c;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .obavijest-date {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 10px;
+    }
+
+    .obavijest-text {
+        font-size: 1rem;
+        color: #444;
+    }
+</style>
+
+<div class="card-container">
+    @foreach (var obavijest in Model)
+    {
+        <div class="card" style="background:white; border-radius:16px; padding:20px; margin-bottom:20px; box-shadow:0px 4px 12px rgba(0,0,0,0.1);">
+            <h3>@obavijest.naslov</h3>
+            <p>@obavijest.tekst</p>
+            <p style="font-size:0.9em; color:gray;">Datum: @obavijest.datum.ToString("dd.MM.yyyy")</p>
+
+            @if (User.IsInRole("Vaspitac") || User.IsInRole("Administrator"))
+            {
+                <div style="margin-top: 10px;">
+                    <a asp-action="Edit" asp-route-id="@obavijest.id" title="Uredi"
+                       style="margin-right: 10px; color: #2d2d5c; text-decoration: none;">
+                        🖊️ Uredi
+                    </a>
+                    <form asp-action="Delete" asp-route-id="@obavijest.id" method="post" style="display:inline;">
+                        <button type="submit" title="Obriši" style="background:none; border:none; color:red; cursor:pointer;">
+                            🗑️ Obriši
+                        </button>
+                    </form>
+                </div>
+            }
+        </div>
+    }
+</div>

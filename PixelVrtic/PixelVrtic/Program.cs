@@ -1,8 +1,32 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PixelVrtic.Data;
+using PixelVrtic.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.IsEssential = true;
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.ExpireTimeSpan = TimeSpan.FromHours(1);
+    options.SlidingExpiration = false;
+    options.LoginPath = "/Identity/Account/Login";
+
+    // Make sure cookie is NOT persistent when RememberMe is false
+    options.Events.OnSigningIn = context =>
+    {
+        if (!context.Properties.IsPersistent)
+        {
+            // Session cookie: no expiration date
+            context.Properties.ExpiresUtc = null;
+        }
+        return Task.CompletedTask;
+    };
+});
+
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -10,8 +34,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<Korisnik>(options =>
+options.SignIn.RequireConfirmedAccount = true)
+ .AddRoles<IdentityRole>()
+ .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -33,7 +61,28 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
+
 app.UseAuthorization();
+
+
+var dummyUser = new Korisnik();
+
+// Generate stamps
+string securityStamp = Guid.NewGuid().ToString();
+string concurrencyStamp = Guid.NewGuid().ToString();
+
+// Hash the password
+var hasher = new PasswordHasher<Korisnik>();
+string passwordHash = hasher.HashPassword(dummyUser, "Vaspitac2");
+
+// Print results
+Debug.WriteLine("=== Generated Identity Fields ===");
+Debug.WriteLine("Password: " + "Vaspitac2");
+Debug.WriteLine("PasswordHash: " + passwordHash);
+Debug.WriteLine("SecurityStamp: " + securityStamp);
+Debug.WriteLine("ConcurrencyStamp: " + concurrencyStamp);
+Debug.WriteLine("=================================");
 
 app.MapControllerRoute(
     name: "default",

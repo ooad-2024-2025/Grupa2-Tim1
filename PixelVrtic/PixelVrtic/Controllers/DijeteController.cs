@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,21 +12,37 @@ using PixelVrtic.Models;
 
 namespace PixelVrtic.Controllers
 {
+    [Authorize]
     public class DijeteController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<Korisnik> _userManager;
 
-        public DijeteController(ApplicationDbContext context)
+
+        public DijeteController(ApplicationDbContext context, UserManager<Korisnik> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Dijete
-        public async Task<IActionResult> Index()
+        // GET: Dijete
+        public async Task<IActionResult> Index(int? idGrupe)
         {
-            var applicationDbContext = _context.Dijete.Include(d => d.Korisnik).Include(d => d.grupa);
-            return View(await applicationDbContext.ToListAsync());
+            var dijeteQuery = _context.Dijete
+                .Include(d => d.Korisnik)
+                .Include(d => d.grupa)
+                .AsQueryable();
+
+            if (idGrupe.HasValue)
+            {
+                dijeteQuery = dijeteQuery.Where(d => d.grupaId == idGrupe.Value);
+            }
+
+            var dijeca = await dijeteQuery.ToListAsync();
+            return View(dijeca);
         }
+
 
         // GET: Dijete/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -49,8 +67,9 @@ namespace PixelVrtic.Controllers
         // GET: Dijete/Create
         public IActionResult Create()
         {
-            ViewData["roditeljId"] = new SelectList(_context.Korisnik, "id", "id");
-            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "id");
+
+            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime");
+            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "naziv");
             return View();
         }
 
@@ -61,14 +80,22 @@ namespace PixelVrtic.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,ime,prezime,datumRodjenja,mjestoRodenja,JMBG,grupaId,zdravstveneNapomene,fotografija,roditeljId")] Dijete dijete)
         {
+            foreach (var modelState in ModelState)
+            {
+                foreach (var error in modelState.Value.Errors)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Key: {modelState.Key}, Error: {error.ErrorMessage}");
+                }
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(dijete);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["roditeljId"] = new SelectList(_context.Korisnik, "id", "id", dijete.roditeljId);
-            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "id", dijete.grupaId);
+            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime", dijete.roditeljId);
+            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "naziv", dijete.grupaId);
+
             return View(dijete);
         }
 
@@ -85,7 +112,7 @@ namespace PixelVrtic.Controllers
             {
                 return NotFound();
             }
-            ViewData["roditeljId"] = new SelectList(_context.Korisnik, "id", "id", dijete.roditeljId);
+            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime", dijete.roditeljId);
             ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "id", dijete.grupaId);
             return View(dijete);
         }
@@ -122,8 +149,8 @@ namespace PixelVrtic.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["roditeljId"] = new SelectList(_context.Korisnik, "id", "id", dijete.roditeljId);
-            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "id", dijete.grupaId);
+            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime", dijete?.roditeljId);
+            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "id", dijete?.grupaId);
             return View(dijete);
         }
 

@@ -1,8 +1,188 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Vrtić</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #e6f5ff;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-image: url('hero-bg.png');
+            background-size: cover;
+        }
+
+            .hero h1 {
+                font-size: 3rem;
+                color: #1b2b6b;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+                color: #f8af20;
+                font-style: italic;
+            }
+
+        .section {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #d4f4ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: 250px;
+        }
+
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #fff7e0;
+            padding: 3rem 2rem;
+        }
+
+        .cta-text {
+            max-width: 400px;
+        }
+
+        .cta-buttons button {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #000;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .roles {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            background-color: #e6f5ff;
+            padding: 3rem 1rem;
+        }
+
+        .role-box {
+            background-color: #dbf9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: 280px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #d9f1ff;
+            padding: 2rem;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+            footer .footer-columns {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>oblikuj dječiju</h1>
+        <h2>kreativnost</h2>
+        <p>Digitalna platforma modernog vrtića - evidencija prisustva, online upis, komunikacija sa roditeljima i više.</p>
+    </section>
+
+    <section class="section" id="onama">
+        <h2>Ko smo mi?</h2>
+        <p>Pixel Vrtić je platforma koja spaja tehnologiju, edukaciju i roditeljsku brigu.</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Digitalizacija</h3>
+                <p>Roditelji mogu prijaviti dijete putem jednostavne online forme. Sve informacije dostupne su 24/7.</p>
+            </div>
+            <div class="card">
+                <h3>Sigurnost i privatnost</h3>
+                <p>Pixel Vrtić čini društvo sretne djece. Edukujemo i pažljivo odgajamo.</p>
+            </div>
+            <div class="card">
+                <h3>Pametan vrtić</h3>
+                <p>Olakšavamo svakodnevicu roditelja i vaspitača - uz potpuni nadzor i personalizovan pristup.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-text">
+            <h2><span style="color:#00aaff">Zajedno</span> stvaramo sretne uspomene.</h2>
+            <p>Pixel nije samo aplikacija – to je zajednica roditelja i vaspitača koji prate dječiji rast i razvoj.</p>
+            <div class="cta-buttons">
+                <button>Zapoečni sada</button>
+                <button>Saznaj više</button>
+            </div>
+        </div>
+        <img src="balloons.png" alt="Djeca u balonu" width="300">
+    </section>
+
+    <section class="roles">
+        <div class="role-box">
+            <h3>Roditelj</h3>
+            <p>Pratite prisustvo, dobijajte izvještaje, ažurirajte podatke i budite u toku sa aktivnostima vašeg djeteta.</p>
+            <a href="#login">Uloguj se preko roditeljskog naloga</a>
+        </div>
+        <div class="role-box" style="background-color: #f0e7ff;">
+            <h3>Zaposleni u vrtiću</h3>
+            <p>Upravljajte aktivnostima, prisustvom i izvještajima. Komunicirajte lako sa roditeljima.</p>
+            <a href="#register">Prijavi se kao vaspitač</a>
+        </div>
+    </section>
+
+    <footer id="kontakt">
+        <div class="footer-columns">
+            <div>
+                <strong>O Pixel Vrtiću</strong><br>
+                Pixel je digitalna platforma za upravljanje aktivnostima i komunikaciju roditelja i vrtića.
+            </div>
+            <div>
+                <strong>Kontakt</strong><br>
+                Zmaja od Bosne bb, Sarajevo<br>
+                pixelvrtic@gmail.com<br>
+                +123 456 789
+            </div>
+            <div>
+                <strong>Linkovi</strong><br>
+                Početna<br>
+                O nama<br>
+                Kontakt<br>
+                Prijava<br>
+                Registracija
+            </div>
+            <div>
+                <strong>Prava i sigurnost</strong><br>
+                Pravila privatnosti<br>
+                Uslovi korištenja<br>
+                Prijava tehničkog problema
+            </div>
+        </div>
+        <p style="text-align:center; margin-top: 1rem;">&copy; 2025 OOAD projekat</p>
+    </footer>
+</body>
+</html>

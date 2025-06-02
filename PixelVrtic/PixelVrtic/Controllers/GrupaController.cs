@@ -2,21 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using PixelVrtic.Data;
 using PixelVrtic.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PixelVrtic.Controllers
 {
+    [Authorize]
+
     public class GrupaController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<Korisnik> _userManager;
 
-        public GrupaController(ApplicationDbContext context)
+        public GrupaController(ApplicationDbContext context, UserManager<Korisnik> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Grupas
@@ -48,7 +56,8 @@ namespace PixelVrtic.Controllers
         // GET: Grupas/Create
         public IActionResult Create()
         {
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id");
+            ViewData["idKorisnika"] = new SelectList(_userManager.Users, "Id", "ime");
+
             return View();
         }
 
@@ -57,17 +66,50 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,naziv,idKorisnika")] Grupa grupa)
+        public async Task<IActionResult> Create(Grupa grupa)
         {
+            foreach (var modelState in ModelState)
+            {
+                foreach (var error in modelState.Value.Errors)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Key: {modelState.Key}, Error: {error.ErrorMessage}");
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(grupa);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(); // grupa.id is now set by DB
+
+                // Update the user's idGrupe
+                if (grupa.idKorisnika != null)
+                {
+                    var korisnik = await _userManager.FindByIdAsync(grupa.idKorisnika.ToString());
+                    if (korisnik != null)
+                    {
+                        korisnik.idGrupe = grupa.id; // set FK to new group's id
+
+                        // update korisnik using UserManager
+                        var result = await _userManager.UpdateAsync(korisnik);
+                        if (!result.Succeeded)
+                        {
+                            // Handle errors here if needed
+                            foreach (var error in result.Errors)
+                            {
+                                System.Diagnostics.Debug.WriteLine($"User update error: {error.Description}");
+                            }
+                        }
+                    }
+                }
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id", grupa.idKorisnika);
+
+            ViewData["idKorisnika"] = new SelectList(_userManager.Users, "Id", "ime", grupa.idKorisnika);
             return View(grupa);
         }
+
+
 
         // GET: Grupas/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -82,7 +124,7 @@ namespace PixelVrtic.Controllers
             {
                 return NotFound();
             }
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id", grupa.idKorisnika);
+            ViewData["idKorisnika"] = new SelectList(_userManager.Users, "Id", "ime", grupa.idKorisnika);
             return View(grupa);
         }
 
@@ -91,7 +133,7 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,naziv,idKorisnika")] Grupa grupa)
+        public async Task<IActionResult> Edit(int id, [Bind("naziv,idKorisnika")] Grupa grupa)
         {
             if (id != grupa.id)
             {
@@ -118,7 +160,7 @@ namespace PixelVrtic.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id", grupa.idKorisnika);
+            ViewData["idKorisnika"] = new SelectList(_userManager.Users, "Id", "ime", grupa.idKorisnika);
             return View(grupa);
         }
 

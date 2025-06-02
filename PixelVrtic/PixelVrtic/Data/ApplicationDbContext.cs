@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Emit;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
@@ -6,7 +7,7 @@ using PixelVrtic.Models;
 
 namespace PixelVrtic.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<Korisnik, IdentityRole, string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -45,6 +46,7 @@ namespace PixelVrtic.Data
                 .WithMany() 
                 .HasForeignKey(d => d.roditeljId)
                 .OnDelete(DeleteBehavior.Restrict);
+            
         }
     }
 }

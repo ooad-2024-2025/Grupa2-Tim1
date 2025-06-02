@@ -1,0 +1,150 @@
+﻿@model List<PixelVrtic.Models.Korisnik>
+
+<div class="container">
+    <div class="search-add-bar">
+        <!--    <input type="text" placeholder="Pretraži" class="search-input" />-->
+        <a href="/Vaspitac/Create" class="add-button">+ Dodaj vaspitača</a>
+    </div>
+
+    <h1 class="section-title">Vaspitači</h1>
+
+    <div class="cards-grid">
+        @{
+            var grupe = ViewBag.Grupe as Dictionary<int, string>;
+        }
+
+        @foreach (var vaspitac in Model)
+        {
+            <div class="card">
+                <div class="avatar"></div>
+                <h2 class="name">@vaspitac.ime @vaspitac.prezime</h2>
+                <p class="group">
+                    @(vaspitac.idGrupe.HasValue && grupe.ContainsKey(vaspitac.idGrupe.Value)
+                        ? grupe[vaspitac.idGrupe.Value]
+                        : "/")
+                </p>
+                <div class="card-actions">
+                    <button class="icon-btn">📞</button>
+                    <button class="icon-btn">💬</button>
+                    <button class="icon-btn">📧</button>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="pagination">
+        <span>Prikazuje 1-@Model.Count od @Model.Count</span>
+        <div class="pagination-controls">
+            <a class="page current">1</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        padding: 2rem;
+        background-color: #fde9f0;
+        color: #fff;
+        min-height: 100vh;
+    }
+
+    .section-title {
+        color: #303053;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-add-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    .search-input {
+        padding: 0.5rem;
+        border-radius: 10px;
+        border: none;
+        width: 250px;
+    }
+
+    .add-button {
+        background-color: #e9f0f4;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: #1b1b40;
+        font-weight: bold;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    .card {
+        background-color: #fff;
+        color: #1b1b40;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 auto 0.5rem;
+    }
+
+    .name {
+        font-weight: bold;
+    }
+
+    .group {
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .card-actions {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .icon-btn {
+        background-color: #e9f0f4;
+        border: none;
+        border-radius: 50%;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .pagination {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #999;
+    }
+
+    .pagination-controls {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .page {
+        background-color: #ccc;
+        color: #000;
+        padding: 0.25rem 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+        .page.current {
+            background-color: #4e4e8e;
+            color: #fff;
+        }
+</style>

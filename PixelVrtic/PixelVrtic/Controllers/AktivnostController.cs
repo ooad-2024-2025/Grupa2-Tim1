@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,21 +12,37 @@ using PixelVrtic.Models;
 
 namespace PixelVrtic.Controllers
 {
+    [Authorize]
     public class AktivnostController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public AktivnostController(ApplicationDbContext context)
+        private readonly UserManager<Korisnik> _userManager;
+
+
+        public AktivnostController(ApplicationDbContext context, UserManager<Korisnik> userManager)
         {
             _context = context;
+            _userManager = userManager;
+        }
+        // GET: Aktivnost
+        public IActionResult Index(int? year, int? month)
+        {
+            var selectedYear = year ?? DateTime.Now.Year;
+            var selectedMonth = month ?? DateTime.Now.Month;
+
+            var aktivnosti = _context.Aktivnost
+            .Include(a => a.Grupa)
+            .Include(a => a.Korisnik)
+            .Where(a => a.datumPocetka.Year == selectedYear && a.datumPocetka.Month == selectedMonth)
+            .ToList();
+
+            ViewBag.Year = selectedYear;
+            ViewBag.Month = selectedMonth;
+
+            return View(aktivnosti);
         }
 
-        // GET: Aktivnost
-        public async Task<IActionResult> Index()
-        {
-            var applicationDbContext = _context.Aktivnost.Include(a => a.Grupa).Include(a => a.Korisnik);
-            return View(await applicationDbContext.ToListAsync());
-        }
 
         // GET: Aktivnost/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -49,10 +67,13 @@ namespace PixelVrtic.Controllers
         // GET: Aktivnost/Create
         public IActionResult Create()
         {
-            ViewData["idGrupe"] = new SelectList(_context.Grupa, "id", "id");
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id");
+            var users = _userManager.Users.ToList(); // Materialize to prevent issues
+            ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv");
+            ViewData["idKorisnika"] = new SelectList(users, "Id", "ime");
+            ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
             return View();
         }
+
 
         // POST: Aktivnost/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -67,8 +88,8 @@ namespace PixelVrtic.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idGrupe"] = new SelectList(_context.Grupa, "id", "id", aktivnost.idGrupe);
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id", aktivnost.idKorisnika);
+            ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
+            ViewData["idKorisnika"] = new SelectList(_userManager.Users.ToList(), "Id", "ime", aktivnost.idKorisnika);
             return View(aktivnost);
         }
 
@@ -85,8 +106,8 @@ namespace PixelVrtic.Controllers
             {
                 return NotFound();
             }
-            ViewData["idGrupe"] = new SelectList(_context.Grupa, "id", "id", aktivnost.idGrupe);
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id", aktivnost.idKorisnika);
+            ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
+            ViewData["idKorisnika"] = new SelectList(_userManager.Users.ToList(), "Id", "ime", aktivnost.idKorisnika);
             return View(aktivnost);
         }
 
@@ -122,8 +143,8 @@ namespace PixelVrtic.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idGrupe"] = new SelectList(_context.Grupa, "id", "id", aktivnost.idGrupe);
-            ViewData["idKorisnika"] = new SelectList(_context.Korisnik, "id", "id", aktivnost.idKorisnika);
+            ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
+            ViewData["idKorisnika"] = new SelectList(_userManager.Users.ToList(), "Id", "ime", aktivnost.idKorisnika);
             return View(aktivnost);
         }
 

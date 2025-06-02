@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace PixelVrtic.Models
 {
@@ -13,7 +14,11 @@ namespace PixelVrtic.Models
 		public string tekst { get; set; }
 		public DateTime datum { get; set; }
 		[ForeignKey("Korisnik")]
-        public int idAutora { get; set; }
+        [ValidateNever]
+
+        public string idAutora { get; set; }
+
+        [ValidateNever]	
         public Korisnik Korisnik { get; set; }
 	}
 }

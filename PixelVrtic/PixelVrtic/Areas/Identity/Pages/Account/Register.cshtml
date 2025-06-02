@@ -1,0 +1,162 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registracija";
+    Layout = null;
+}
+
+<style>
+    body {
+        background-color: #f7f7f7;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        margin-top: 40px;
+    }
+
+    .login-box {
+        background-color: white;
+        padding: 30px;
+        padding-bottom: 80px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        max-width: 400px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 250px;
+    }
+
+    .btn-pink {
+        background-color: #f4a6b1;
+        color: white;
+        border: none;
+        width: 120px;
+        padding: 12px;
+        font-weight: 600;
+        border-radius: 6px;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+
+        .btn-pink:hover {
+            background-color: #e5939f;
+        }
+
+    .login-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2b2e6b;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        background-color: #f4f4f4;
+        border: none;
+        height: 45px;
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #777;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #f4a6b1;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: background-color 0.2s;
+    }
+
+        .back-btn:hover {
+            background-color: #e5939f;
+        }
+
+</style>
+<a href="/" class="back-btn" title="Početna">
+    &#8592;
+</a>
+
+<div class="login-container">
+    <div class="login-box">
+        <div class="login-title">Registracija</div>
+
+        <form id="registerForm" method="post" asp-route-returnUrl="@Model.ReturnUrl">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+            <div class="form-group">
+                <label class="form-label">IME</label>
+                <input asp-for="Input.Ime" class="form-control" placeholder="ime" />
+                <span asp-validation-for="Input.Ime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">PREZIME</label>
+                <input asp-for="Input.Prezime" class="form-control" placeholder="prezime" />
+                <span asp-validation-for="Input.Prezime" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label class="form-label">EMAIL</label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="mail123@hotmail.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">BROJ TELEFONA</label>
+                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="+387 61 123 456" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">LOZINKA</label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="**********" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">POTVRDA LOZINKE</label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="**********" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+        </form>
+
+        <button form="registerForm" type="submit" class="btn btn-pink">Registruj se</button>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

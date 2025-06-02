@@ -1,47 +1,94 @@
 ﻿@model PixelVrtic.Models.Obavijest
-
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Slanje obavještenja";
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        background-color: #fde9f1;
+        font-family: 'Poppins', sans-serif;
+    }
 
-<h4>Obavijest</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="naslov" class="control-label"></label>
-                <input asp-for="naslov" class="form-control" />
-                <span asp-validation-for="naslov" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="tekst" class="control-label"></label>
-                <input asp-for="tekst" class="form-control" />
-                <span asp-validation-for="tekst" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="datum" class="control-label"></label>
-                <input asp-for="datum" class="form-control" />
-                <span asp-validation-for="datum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="idAutora" class="control-label"></label>
-                <select asp-for="idAutora" class ="form-control" asp-items="ViewBag.idAutora"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+    .container {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        width: 60%;
+        margin: 40px auto;
+        box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        color: #2d2d5c;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    .btn-submit {
+        background-color: #d2f0fd;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 20px;
+        color: #2d2d5c;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+        .btn-submit:hover {
+            background-color: #a7e4fb;
+        }
+</style>
+
+<div class="container">
+    <h1>Slanje obavještenja</h1>
+    <form asp-action="Create">
+        <div class="form-group">
+            <label asp-for="naslov">Naslov</label>
+            <input asp-for="naslov" />
+            <span asp-validation-for="naslov" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="tekst">Sadržaj obavještenja</label>
+            <textarea asp-for="tekst"></textarea>
+            <span asp-validation-for="tekst" class="text-danger"></span>
+        </div>
+        <!--<div class="form-group">
+            <label asp-for="datum">Datum</label>
+            <input asp-for="datum" type="date" />
+            <span asp-validation-for="datum" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="idAutora">Autor</label>
+            <select asp-for="idAutora" asp-items="ViewBag.idAutora"></select>
+        </div>-->
+        <button type="submit" class="btn-submit">Pošalji</button>
+    </form>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
