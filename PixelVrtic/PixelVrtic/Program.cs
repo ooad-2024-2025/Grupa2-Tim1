@@ -66,23 +66,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 
-var dummyUser = new Korisnik();
-
-// Generate stamps
-string securityStamp = Guid.NewGuid().ToString();
-string concurrencyStamp = Guid.NewGuid().ToString();
-
-// Hash the password
-var hasher = new PasswordHasher<Korisnik>();
-string passwordHash = hasher.HashPassword(dummyUser, "Vaspitac2");
-
-// Print results
-Debug.WriteLine("=== Generated Identity Fields ===");
-Debug.WriteLine("Password: " + "Vaspitac2");
-Debug.WriteLine("PasswordHash: " + passwordHash);
-Debug.WriteLine("SecurityStamp: " + securityStamp);
-Debug.WriteLine("ConcurrencyStamp: " + concurrencyStamp);
-Debug.WriteLine("=================================");
 
 app.MapControllerRoute(
     name: "default",

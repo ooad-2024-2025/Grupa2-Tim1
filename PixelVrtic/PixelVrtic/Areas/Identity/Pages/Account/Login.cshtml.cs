@@ -118,7 +118,13 @@ namespace PixelVrtic.Areas.Identity.Pages.Account
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
                 }
-                var result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, false, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(user, Input.Password, false, lockoutOnFailure: false);
+                System.Diagnostics.Debug.WriteLine($"Email: {Input.Email}");
+                System.Diagnostics.Debug.WriteLine($"UserName in DB: {user.UserName}");
+                System.Diagnostics.Debug.WriteLine($"Email in DB: {user.Email}");
+                System.Diagnostics.Debug.WriteLine($"pASS: {Input.Password}");
+
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
@@ -130,11 +136,11 @@ namespace PixelVrtic.Areas.Identity.Pages.Account
                     }
                     else if (await _signInManager.UserManager.IsInRoleAsync(user, "Roditelj"))
                     {
-                        return RedirectToPage("/Roditelj/Pregled");
+                        return RedirectToAction("Dashboard", "Admin");
                     }
                     else if (await _signInManager.UserManager.IsInRoleAsync(user, "Vaspitac"))
                     {
-                        return RedirectToPage("/Vaspitac/Dashboard");
+                        return RedirectToAction("Dashboard", "Admin");
                     }
 
                     return LocalRedirect(returnUrl); // fallback
@@ -151,6 +157,8 @@ namespace PixelVrtic.Areas.Identity.Pages.Account
                 }
                 else
                 {
+                    System.Diagnostics.Debug.WriteLine("ovaj drugi :0");
+
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
                 }
