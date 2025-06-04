@@ -3,14 +3,11 @@
 
 @{
     ViewData["Title"] = "Djeca";
-    var selectedGroup = Model.FirstOrDefault()?.grupa?.naziv ?? "Sve grupe";
+    var selectedGroup = Model.FirstOrDefault()?.grupa?.naziv ?? "";
 }
-<h1>Djeca - @selectedGroup</h1>
+<h1>Djeca</h1><br />
 
-@if (Context.Request.Query.ContainsKey("idGrupe"))
-{
-    <a asp-action="Index" class="btn btn-sm btn-outline-secondary">Prikaži sve grupe</a>
-}
+
 
 
 
@@ -18,10 +15,13 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
 <div class="page-header">
-    <h1>Djeca</h1>
     <div class="header-actions">
         <input type="text" placeholder="Pretraži djecu" class="search-bar" />
-        <a asp-action="Create" class="btn-add">+ Dodaj dijete</a>
+        <a asp-action="Create" class="add-button">+ Dodaj dijete</a>
+        @if (Context.Request.Query.ContainsKey("idGrupe"))
+        {
+            <a asp-action="Index" class="btn btn-sm btn-outline-secondary">Prikaži sve grupe</a>
+        }
     </div>
 </div>
 
@@ -89,13 +89,22 @@
         outline: none;
     }
 
-    .btn-add {
-        background-color: #d6f1ff;
+    .add-button {
+        background-color: lightpink;
+        border-radius: 20px;
         padding: 0.5rem 1rem;
-        border-radius: 9999px;
         text-decoration: none;
+        color: white;
         font-weight: bold;
     }
+
+        .add-button:hover,
+        .add-button:focus {
+            background-color: pink; /* hotpink, matches the theme */
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
+            text-decoration: none;
+        }
 
     .children-table {
         background-color: #ffffff;

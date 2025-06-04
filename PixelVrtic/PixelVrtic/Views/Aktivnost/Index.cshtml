@@ -73,34 +73,46 @@
     {
         <div class="calendar-day empty"></div>
     }
-
     @for (int day = 1; day <= daysInMonth; day++)
     {
         var currentDate = new DateTime(year, month, day);
         var dayActivities = Model.Where(a => a.datumPocetka.Date == currentDate).ToList();
         var isToday = currentDate.Date == today;
 
-        <div class="calendar-day @(isToday ? "today" : "")">
+        <div class="calendar-day @(isToday ? "today" : "")" style="cursor:pointer;"
+             onclick="location.href='@Url.Action("Create", "Aktivnost")?datumPocetka=@currentDate.ToString("yyyy-MM-dd")'">
+
             <div class="date-number">@day</div>
 
             @if (dayActivities.Any())
             {
-                <div class="activity-tooltip">
-                    <div class="activity-dot"></div>
-                    <div class="activity-popup">
-                        @foreach (var activity in dayActivities)
+                @foreach (var activity in dayActivities)
+                {
+                    <div class="activity-tooltip">
+                        @if (ViewBag.IsAuthorizedUser == true)
                         {
+                            <div class="activity-dot"
+                                 onclick="event.stopPropagation(); location.href='@Url.Action("Edit", "Aktivnost", new { id = activity.id })'">
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="activity-dot"></div>
+                        }
+
+                        <div class="activity-popup">
                             <div class="activity-card">
                                 <strong>@activity.nazivAktivnosti</strong><br />
                                 Grupa: @activity.Grupa?.naziv<br />
                                 Korisnik: @activity.Korisnik?.ime
                             </div>
-                        }
+                        </div>
                     </div>
-                </div>
+                }
             }
         </div>
     }
+
 
 </div>
 <style>
@@ -144,7 +156,7 @@
         transition: all 0.2s ease-in-out;
     }
 
-        .calendar-day.today {
+        .calendar-day.today {   
             border: 2px solid #ff7043;
         }
 
@@ -232,9 +244,11 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .activity-tooltip:hover .activity-popup {
-        display: block;
-    }
+        .activity-tooltip:hover .activity-popup,
+        .activity-popup:hover {
+            display: block;
+        }
+
 
     .activity-card {
         margin-bottom: 8px;
@@ -246,6 +260,17 @@
             margin-bottom: 0;
         }
 
+    .activity-card {
+        cursor: pointer;
+    }
 
+    .activity-dot {
+        cursor: pointer;
+    }
 
+    .calendar-day:hover {
+        background-color: #fff2e6; /* subtle highlight on hover */
+        border-color: #ff7043;
+        cursor: pointer;
+    }
 </style>

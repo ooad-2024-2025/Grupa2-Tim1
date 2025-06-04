@@ -1,39 +1,112 @@
 ﻿@model PixelVrtic.Models.Grupa
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Uredi grupu";
 }
 
-<h1>Edit</h1>
+<style>
+    body {
+        background-color: #e0f7fa; /* baby blue */
+        font-family: 'Poppins', sans-serif;
+    }
 
-<h4>Grupa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id" />
-            <div class="form-group">
-                <label asp-for="naziv" class="control-label"></label>
-                <input asp-for="naziv" class="form-control" />
-                <span asp-validation-for="naziv" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="idKorisnika" class="control-label"></label>
-                <select asp-for="idKorisnika" class="form-control" asp-items="ViewBag.idKorisnika"></select>
-                <span asp-validation-for="idKorisnika" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    .container {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        width: 40%;
+        margin: 40px auto;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    h1 {
+        font-size: 1.5rem;
+        color: #2d2d5c;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    label {
+        font-weight: 600;
+        margin-top: 10px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    input, select {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+    }
+
+    .btn-submit {
+        background-color: #d2f0fd;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 20px;
+        color: #2d2d5c;
+        font-weight: 600;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-submit:hover {
+            background-color: #a7e4fb;
+        }
+
+    .back-link {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+        color: #2d2d5c;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .text-danger {
+        font-size: 0.9rem;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        display: block;
+    }
+</style>
+
+<div class="container">
+    <h1>Uredi grupu</h1>
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="id" />
+
+        <div class="form-group">
+            <label asp-for="naziv">Naziv</label>
+            <input asp-for="naziv" />
+            <span asp-validation-for="naziv" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="idKorisnika">Korisnik</label>
+            <select asp-for="idKorisnika" asp-items="ViewBag.idKorisnika"></select>
+            <span asp-validation-for="idKorisnika" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Spremi</button>
+    </form>
+
+    <a asp-action="Index" class="back-link">⟵ Nazad na listu</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

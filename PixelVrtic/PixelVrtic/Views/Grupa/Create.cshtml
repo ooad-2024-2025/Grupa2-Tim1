@@ -1,38 +1,104 @@
 ﻿@model PixelVrtic.Models.Grupa
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Kreiranje grupe";
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        background-color: #e0f7fa; /* baby blue background */
+        font-family: 'Poppins', sans-serif;
+    }
 
-<h4>Grupa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="naziv" class="control-label"></label>
-                <input asp-for="naziv" class="form-control" />
-                <span asp-validation-for="naziv" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="idKorisnika" class="control-label"></label>
-                <select asp-for="idKorisnika" class ="form-control" asp-items="ViewBag.idKorisnika"></select>
-                <span asp-validation-for="idKorisnika" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    .container {
+        background-color: white;
+        border-radius: 16px;
+        padding: 40px;
+        width: 60%;
+        margin: 40px auto;
+        box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+    }
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    h1 {
+        font-size: 1.8rem;
+        color: #2d2d5c;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    input, select {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .text-danger {
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        background-color: #e0f7fa; /* baby pink */
+        border: none;
+        padding: 10px 30px;
+        border-radius: 20px;
+        color: #2d2d5c;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+        .btn-submit:hover {
+            background-color: darkslateblue;
+            color: white;
+        }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #2d2d5c;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="container">
+    <h1>Kreiranje grupe</h1>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="naziv">NAZIV</label>
+            <input asp-for="naziv" />
+            <span asp-validation-for="naziv" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="idKorisnika">VASPITAC</label>
+            <select asp-for="idKorisnika" asp-items="ViewBag.idKorisnika"></select>
+            <span asp-validation-for="idKorisnika" class="text-danger"></span>
+        </div>
+        <br />
+
+        <button type="submit" class="btn-submit">Kreiraj grupu</button>
+    </form>
+
+    <a asp-action="Index" class="back-link">← Nazad na listu grupa</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

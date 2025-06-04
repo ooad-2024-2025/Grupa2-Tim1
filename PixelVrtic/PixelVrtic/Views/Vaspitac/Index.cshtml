@@ -64,17 +64,25 @@
         padding: 0.5rem;
         border-radius: 10px;
         border: none;
-        width: 250px;
+        width: 300px;
     }
 
     .add-button {
-        background-color: #e9f0f4;
+        background-color: lightpink;
         border-radius: 20px;
         padding: 0.5rem 1rem;
         text-decoration: none;
-        color: #1b1b40;
+        color: white;
         font-weight: bold;
     }
+
+        .add-button:hover,
+        .add-button:focus {
+            background-color: pink; /* hotpink, matches the theme */
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
+            text-decoration: none;
+        }
 
     .cards-grid {
         display: grid;

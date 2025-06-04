@@ -37,6 +37,8 @@ namespace PixelVrtic.Controllers
             .Where(a => a.datumPocetka.Year == selectedYear && a.datumPocetka.Month == selectedMonth)
             .ToList();
 
+            var user = HttpContext.User;
+            ViewBag.IsAuthorizedUser = user.IsInRole("Administrator") || user.IsInRole("Vaspitač");
             ViewBag.Year = selectedYear;
             ViewBag.Month = selectedMonth;
 
@@ -65,14 +67,34 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Aktivnost/Create
-        public IActionResult Create()
+        public IActionResult Create(string datumPocetka)
         {
             var users = _userManager.Users.ToList(); // Materialize to prevent issues
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv");
             ViewData["idKorisnika"] = new SelectList(users, "Id", "ime");
             ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
-            return View();
+
+            var model = new Aktivnost();
+
+            if (!string.IsNullOrEmpty(datumPocetka))
+            {
+                if (DateTime.TryParse(datumPocetka, out var parsedDate))
+                {
+                    model.datumPocetka = parsedDate;
+                    model.datumZavrsetka = parsedDate;
+                }
+                else
+                {
+                    model.datumPocetka = DateTime.Today;
+                    model.datumZavrsetka = DateTime.Today;
+                }
+            }
+
+            return View(model);
         }
+
+
+
 
 
         // POST: Aktivnost/Create

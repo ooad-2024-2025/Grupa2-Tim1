@@ -1,74 +1,154 @@
 ﻿@model PixelVrtic.Models.Dijete
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Uredi dijete";
 }
 
-<h1>Edit</h1>
+<style>
+    body {
+        background-color: #e0f7fa; /* baby blue */
+        font-family: 'Poppins', sans-serif;
+    }
 
-<h4>Dijete</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id" />
-            <div class="form-group">
-                <label asp-for="ime" class="control-label"></label>
-                <input asp-for="ime" class="form-control" />
-                <span asp-validation-for="ime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="prezime" class="control-label"></label>
-                <input asp-for="prezime" class="form-control" />
-                <span asp-validation-for="prezime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="datumRodjenja" class="control-label"></label>
-                <input asp-for="datumRodjenja" class="form-control" />
-                <span asp-validation-for="datumRodjenja" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="mjestoRodenja" class="control-label"></label>
-                <input asp-for="mjestoRodenja" class="form-control" />
-                <span asp-validation-for="mjestoRodenja" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="JMBG" class="control-label"></label>
-                <input asp-for="JMBG" class="form-control" />
-                <span asp-validation-for="JMBG" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="grupaId" class="control-label"></label>
-                <select asp-for="grupaId" class="form-control" asp-items="ViewBag.grupaId"></select>
-                <span asp-validation-for="grupaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="zdravstveneNapomene" class="control-label"></label>
-                <input asp-for="zdravstveneNapomene" class="form-control" />
-                <span asp-validation-for="zdravstveneNapomene" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="fotografija" class="control-label"></label>
-                <input asp-for="fotografija" class="form-control" />
-                <span asp-validation-for="fotografija" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="roditeljId" class="control-label"></label>
-                <select asp-for="roditeljId" class="form-control" asp-items="ViewBag.roditeljId"></select>
-                <span asp-validation-for="roditeljId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    .container {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        width: 60%;
+        margin: 40px auto;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    h1 {
+        font-size: 1.5rem;
+        color: #2d2d5c;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    label {
+        font-weight: 600;
+        margin-top: 10px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+    }
+
+    .btn-submit {
+        background-color: #d2f0fd;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 20px;
+        color: #2d2d5c;
+        font-weight: 600;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-submit:hover {
+            background-color: #a7e4fb;
+        }
+
+    .back-link {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+        color: #2d2d5c;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .text-danger {
+        font-size: 0.9rem;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        display: block;
+    }
+</style>
+
+<div class="container">
+    <h1>Uredi dijete</h1>
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="id" />
+
+        <div class="form-group">
+            <label asp-for="ime">Ime</label>
+            <input asp-for="ime" />
+            <span asp-validation-for="ime" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="prezime">Prezime</label>
+            <input asp-for="prezime" />
+            <span asp-validation-for="prezime" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="datumRodjenja">Datum rođenja</label>
+            <input asp-for="datumRodjenja" type="date" />
+            <span asp-validation-for="datumRodjenja" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="mjestoRodenja">Mjesto rođenja</label>
+            <input asp-for="mjestoRodenja" />
+            <span asp-validation-for="mjestoRodenja" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="JMBG">JMBG</label>
+            <input asp-for="JMBG" />
+            <span asp-validation-for="JMBG" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="grupaId">Grupa</label>
+            <select asp-for="grupaId" asp-items="ViewBag.grupaId"></select>
+            <span asp-validation-for="grupaId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="zdravstveneNapomene">Zdravstvene napomene</label>
+            <input asp-for="zdravstveneNapomene" />
+            <span asp-validation-for="zdravstveneNapomene" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="fotografija">Fotografija</label>
+            <input asp-for="fotografija" />
+            <span asp-validation-for="fotografija" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="roditeljId">Roditelj</label>
+            <select asp-for="roditeljId" asp-items="ViewBag.roditeljId"></select>
+            <span asp-validation-for="roditeljId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Spremi</button>
+    </form>
+
+    <a asp-action="Index" class="back-link">⟵ Nazad na listu</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
