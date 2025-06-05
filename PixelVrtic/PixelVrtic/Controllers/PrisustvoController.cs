@@ -162,5 +162,10 @@ namespace PixelVrtic.Controllers
         {
             return _context.Prisustvo.Any(e => e.id == id);
         }
+
+        public IActionResult QR()
+        {
+            return View();
+        }
     }
 }

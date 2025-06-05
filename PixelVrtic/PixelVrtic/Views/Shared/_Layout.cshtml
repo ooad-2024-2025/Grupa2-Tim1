@@ -5,6 +5,10 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Alexandria&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Figma+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/homecss.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Pixel Vrtić</title>
@@ -14,7 +18,6 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fde9f0;
         }
 
         .sidebar {
@@ -56,27 +59,19 @@
 <body>
     @if (!SignInManager.IsSignedIn(User))
     {
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-light bg-white" style="box-shadow: none; border-bottom: none;">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pixel Vrtić</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="/">Početna</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/Home/Index#onama">O nama</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/Home/Kontakt">Kontakt</a></li>
-                            <li class="nav-item"><a class="v1_297" asp-area="Identity" asp-page="/Account/Login">Uloguj se</a></li>
-                            <li class="nav-item"><a class="v1_295" asp-area="Identity" asp-page="/Account/Register">Učlani se</a></li>
-        
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <div class="v1_354"></div>
+        <div class="v1_355"></div>
+        <div class="v1_356">
+            <div class="v1_357"></div>
+            <a class="v1_358" href="/Home/Index#onama" style="text-decoration: none;">O nama</a>
+            <a class="v1_359" asp-controller="Home" asp-action="Kontakt" style="text-decoration: none;">Kontakt</a>
+        </div>
+        <div class="v1_295">
+            <a asp-area="Identity" asp-page="/Account/Register" class="v1_296" style="text-decoration: none;">Učlani se</a>
+        </div>
+        <div class="v1_297">
+            <a asp-area="Identity" asp-page="/Account/Login" class="v1_298" style="text-decoration: none;">Uloguj se</a>
+        </div>
 
         <div class="container mt-4">
             <main role="main" class="pb-3">
@@ -107,9 +102,13 @@
                     }
                     else if (User.IsInRole("Vaspitac"))
                     {
-                        <a asp-controller="Dijete" asp-action="Index">Djeca</a>
-                        <a asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
-                        <a asp-controller="Obavijest" asp-action="Index">Obavještenja</a>
+                        <a class="@(currentController == "Vaspitac" && currentAction == "Dashboard" ? "active" : "")" asp-controller="Vaspitac" asp-action="Dashboard">Dashboard</a>
+                        <a class="@(currentController == "Roditelj" ? "active" : "")" asp-controller="Roditelj" asp-action="Index">Roditelji</a>
+                        <a class="@(currentController == "Dijete" ? "active" : "")" asp-controller="Dijete" asp-action="Index">Djeca</a>
+                        <a class="@(currentController == "Aktivnost" ? "active" : "")" asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
+                        <a class="@(currentController == "Grupe" ? "active" : "")" asp-controller="Grupa" asp-action="Index">Grupe</a>
+                        <a class="@(currentController == "Obavijest" ? "active" : "")" asp-controller="Obavijest" asp-action="Choice">Obavještenja</a>
+                        <a class="@(currentController == "Prisustvo" ? "active" : "")" asp-controller="Prisustvo" asp-action="QR">Prisustvo</a>
                     }
                     else if (User.IsInRole("Roditelj"))
                     {
