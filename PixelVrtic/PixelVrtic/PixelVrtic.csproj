@@ -8,6 +8,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\homecss.css" />
+    <None Include="wwwroot\images\v1_345.png" />
+    <None Include="wwwroot\images\v1_346.png" />
+    <None Include="wwwroot\images\v1_347.png" />
+    <None Include="wwwroot\images\v1_348.png" />
+    <None Include="wwwroot\images\v1_351.png" />
+    <None Include="wwwroot\images\v1_354.png" />
+    <None Include="wwwroot\images\v1_355.png" />
+    <None Include="wwwroot\images\v1_425.png" />
+    <None Include="wwwroot\images\v1_426.png" />
+    <None Include="wwwroot\images\v1_427.png" />
+    <None Include="wwwroot\images\v1_428.png" />
+    <None Include="wwwroot\images\v1_429.png" />
+    <None Include="wwwroot\images\v1_430.png" />
+    <None Include="wwwroot\images\v1_433.png" />
+    <None Include="wwwroot\images\v1_434.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.14" />
