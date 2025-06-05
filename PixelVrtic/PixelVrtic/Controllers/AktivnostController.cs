@@ -26,6 +26,7 @@ namespace PixelVrtic.Controllers
             _userManager = userManager;
         }
         // GET: Aktivnost
+
         public IActionResult Index(int? year, int? month)
         {
             var selectedYear = year ?? DateTime.Now.Year;
@@ -67,6 +68,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Aktivnost/Create
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public IActionResult Create(string datumPocetka)
         {
             var users = _userManager.Users.ToList(); // Materialize to prevent issues
@@ -102,6 +105,8 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Create([Bind("id,nazivAktivnosti,tipAktivnosti,datumPocetka,datumZavrsetka,opis,idGrupe,idKorisnika,fotografija")] Aktivnost aktivnost)
         {
             if (ModelState.IsValid)
@@ -116,6 +121,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Aktivnost/Edit/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -138,6 +145,8 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,nazivAktivnosti,tipAktivnosti,datumPocetka,datumZavrsetka,opis,idGrupe,idKorisnika,fotografija")] Aktivnost aktivnost)
         {
             if (id != aktivnost.id)
@@ -171,6 +180,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Aktivnost/Delete/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -193,6 +204,8 @@ namespace PixelVrtic.Controllers
         // POST: Aktivnost/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var aktivnost = await _context.Aktivnost.FindAsync(id);

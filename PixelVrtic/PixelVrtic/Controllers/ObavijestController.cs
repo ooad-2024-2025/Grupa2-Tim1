@@ -52,6 +52,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Obavijest/Create
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public IActionResult Create()
         {
             ViewData["idAutora"] = new SelectList(_userManager.Users, "Id", "ime");
@@ -63,6 +65,8 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Create(Obavijest obavijest)
         {
             var currentUser = await _userManager.GetUserAsync(User);
@@ -85,6 +89,8 @@ namespace PixelVrtic.Controllers
 
 
         // GET: Obavijest/Edit/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -106,6 +112,8 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,naslov,tekst,datum,idAutora")] Obavijest obavijest)
         {
             if (id != obavijest.id)
@@ -138,6 +146,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Obavijest/Delete/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -159,6 +169,8 @@ namespace PixelVrtic.Controllers
         // POST: Obavijest/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var obavijest = await _context.Obavijest.FindAsync(id);
@@ -170,11 +182,15 @@ namespace PixelVrtic.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [Authorize(Roles = "Administrator, Vaspitac")]
 
         private bool ObavijestExists(int id)
         {
             return _context.Obavijest.Any(e => e.id == id);
         }
+
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
 
         public IActionResult Choice()
         {

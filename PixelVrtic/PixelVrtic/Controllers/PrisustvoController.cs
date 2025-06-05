@@ -72,6 +72,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Prisustvo/Edit/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -93,6 +95,8 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,datum,dijeteId,prisutan,razlogOdsutnosti")] Prisustvo prisustvo)
         {
             if (id != prisustvo.id)
@@ -125,6 +129,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Prisustvo/Delete/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -146,6 +152,8 @@ namespace PixelVrtic.Controllers
         // POST: Prisustvo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var prisustvo = await _context.Prisustvo.FindAsync(id);

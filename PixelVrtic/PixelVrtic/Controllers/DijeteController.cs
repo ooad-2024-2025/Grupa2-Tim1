@@ -27,6 +27,8 @@ namespace PixelVrtic.Controllers
 
         // GET: Dijete
         // GET: Dijete
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Index(int? idGrupe)
         {
             var dijeteQuery = _context.Dijete
@@ -45,6 +47,8 @@ namespace PixelVrtic.Controllers
 
 
         // GET: Dijete/Details/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -155,6 +159,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Dijete/Delete/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -177,6 +183,8 @@ namespace PixelVrtic.Controllers
         // POST: Dijete/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var dijete = await _context.Dijete.FindAsync(id);

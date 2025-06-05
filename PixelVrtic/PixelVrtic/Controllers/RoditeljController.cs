@@ -23,12 +23,13 @@ namespace PixelVrtic.Controllers
             _userManager = userManager;
             _roleManager = roleManager;
         }
-
+        [Authorize(Roles = "Administrator, Vaspitac")]
         public IActionResult Index()
         {
             var roditelji = _userManager.Users.Where(u => u.uloga == Uloga.roditelj).ToList();
             return View(roditelji);
         }
+        [Authorize(Roles = "Administrator")]
 
         public IActionResult Create()
         {
@@ -37,6 +38,9 @@ namespace PixelVrtic.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Create(Korisnik korisnik, string password)
         {
             if (!ModelState.IsValid)
@@ -63,6 +67,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Roditelji/Edit/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(string id)
         {
             var roditelj = await _userManager.FindByIdAsync(id);
@@ -77,6 +83,8 @@ namespace PixelVrtic.Controllers
         // POST: Roditelji/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public IActionResult Edit(string id, Korisnik korisnik)
         {
             if (id != korisnik.Id)
@@ -91,6 +99,7 @@ namespace PixelVrtic.Controllers
             return View(korisnik);
         }
 
+        [Authorize(Roles = "Administrator")]
 
         public async Task<IActionResult> Delete(string id)
         {
@@ -106,6 +115,8 @@ namespace PixelVrtic.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var korisnik = await _userManager.FindByIdAsync(id);

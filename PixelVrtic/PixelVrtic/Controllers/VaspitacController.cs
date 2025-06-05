@@ -14,6 +14,7 @@ public class VaspitacController : Controller
     {
         _context = context;
     }
+    [Authorize(Roles = "Administrator")]
 
     public IActionResult Index()
     {
@@ -28,6 +29,8 @@ public class VaspitacController : Controller
 
         return View(vaspitaci);
     }
+    [Authorize(Roles = "Administrator")]
+
 
     public IActionResult Create()
     {
@@ -36,6 +39,8 @@ public class VaspitacController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Administrator")]
+
     public IActionResult Create(Korisnik korisnik)
     {
         if (ModelState.IsValid)
@@ -46,5 +51,13 @@ public class VaspitacController : Controller
             return RedirectToAction(nameof(Index));
         }
         return View(korisnik);
+    }
+
+    [Authorize(Roles = "Administrator,Vaspitac")]
+
+
+    public IActionResult Dashboard()
+    {
+        return View();
     }
 }

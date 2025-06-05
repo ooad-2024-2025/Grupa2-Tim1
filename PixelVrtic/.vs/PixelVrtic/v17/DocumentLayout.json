@@ -3,6 +3,54 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\aktivnostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\aktivnostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\prisustvocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\prisustvocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\vaspitaccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\vaspitaccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\vaspitac\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\vaspitac\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\roditeljcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\roditeljcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\obavijestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\obavijestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\grupacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\grupacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\dijetecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\dijetecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\aktivnost\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\aktivnost\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\roditelj\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\roditelj\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -35,18 +83,6 @@
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\obavijest\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\vaspitac\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\vaspitac\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\prisustvocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\prisustvocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -57,10 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\grupacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\grupacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -75,10 +107,6 @@
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\home\\kontakt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\roditelj\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\roditelj\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -89,14 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\grupa\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\grupa\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\roditeljcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\roditeljcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\obavijestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\obavijestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\models\\korisnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -123,10 +143,6 @@
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\models\\uloga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\vaspitaccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\vaspitaccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\obavijest\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\obavijest\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -141,14 +157,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\aktivnost\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\aktivnost\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\aktivnostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\aktivnostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\aktivnost\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\aktivnost\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\dijete\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -189,14 +197,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\obavijest\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\obavijest\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\dijetecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\dijetecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\administrator\\ooad\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\models\\tipaktivnosti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -414,191 +414,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QR.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T11:22:02.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAG0AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-31T13:40:56.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-04T10:29:37.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Create.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Obavijest\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Create.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Obavijest\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T14:44:06.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Grupa\\Index.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Grupa\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Grupa\\Index.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Grupa\\Index.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACYAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-27T09:16:24.209Z",
+              "DocumentIndex": 3,
+              "Title": "VaspitacController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\VaspitacController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\VaspitacController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\VaspitacController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\VaspitacController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAiwDcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:09:16.03Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Dijete\\Index.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Dijete\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Dijete\\Index.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Dijete\\Index.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-27T09:16:12.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
-              "ViewState": "AgIAALwAAAAAAAAAAAAuwM0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-27T09:15:59.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Roditelj\\Index.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Roditelj\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Roditelj\\Index.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Roditelj\\Index.cshtml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAuwE8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-01T14:05:57.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\appsettings.json",
-              "RelativeDocumentMoniker": "PixelVrtic\\appsettings.json",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\appsettings.json",
-              "RelativeToolTip": "PixelVrtic\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-16T15:44:54.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T11:08:23.74Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAYwCAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T13:36:38.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-31T13:48:07.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "homecss.css",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\homecss.css",
-              "RelativeDocumentMoniker": "PixelVrtic\\wwwroot\\css\\homecss.css",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\homecss.css",
-              "RelativeToolTip": "PixelVrtic\\wwwroot\\css\\homecss.css",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-05T10:55:13.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "PixelVrtic\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "PixelVrtic\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-05T11:03:20.565Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Vaspitac\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Vaspitac\\Dashboard.cshtml",
@@ -611,20 +444,282 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T12:08:37.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PrisustvoController.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\PrisustvoController.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\PrisustvoController.cs",
               "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\PrisustvoController.cs",
               "RelativeToolTip": "PixelVrtic\\Controllers\\PrisustvoController.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAAwKgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAcwJsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T09:12:36.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AktivnostController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AktivnostController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\AktivnostController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AktivnostController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\AktivnostController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAiwM8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T09:10:55.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\appsettings.json",
+              "RelativeDocumentMoniker": "PixelVrtic\\appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\appsettings.json",
+              "RelativeToolTip": "PixelVrtic\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-16T15:44:54.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoditeljController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\RoditeljController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\RoditeljController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\RoditeljController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\RoditeljController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAmwHUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T14:01:06.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ObavijestController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\ObavijestController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\ObavijestController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\ObavijestController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\ObavijestController.cs",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAkwL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T09:11:57.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T13:36:38.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GrupaController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\GrupaController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\GrupaController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\GrupaController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\GrupaController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwB4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T09:10:18.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DijeteController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\DijeteController.cs",
+              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\DijeteController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\DijeteController.cs",
+              "RelativeToolTip": "PixelVrtic\\Controllers\\DijeteController.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAkwLkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T09:09:45.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAuwFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T12:01:39.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Roditelj\\Index.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Roditelj\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Roditelj\\Index.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Roditelj\\Index.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAuwE8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T14:05:57.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Aktivnost\\Index.cshtml",
+              "ViewState": "AgIAALwAAAAAAAAAAAAuwM0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T09:15:59.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Dijete\\Index.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Dijete\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Dijete\\Index.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Dijete\\Index.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T09:16:12.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Grupa\\Index.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Grupa\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Grupa\\Index.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Grupa\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T09:16:24.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Create.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Obavijest\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Create.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Obavijest\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T14:44:06.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Prisustvo\\Create.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T10:29:37.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAG0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T13:40:56.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "QR.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Prisustvo\\QR.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T11:22:02.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Vaspitac\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T11:08:23.74Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T13:48:07.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "homecss.css",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\homecss.css",
+              "RelativeDocumentMoniker": "PixelVrtic\\wwwroot\\css\\homecss.css",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\homecss.css",
+              "RelativeToolTip": "PixelVrtic\\wwwroot\\css\\homecss.css",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-05T10:55:13.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "PixelVrtic\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "PixelVrtic\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-05T11:03:20.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Roditelj\\Edit.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Roditelj\\Edit.cshtml",
@@ -636,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -648,31 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "GrupaController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\GrupaController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\GrupaController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\GrupaController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\GrupaController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAuwBEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T09:10:18.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "RoditeljController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\RoditeljController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\RoditeljController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\RoditeljController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\RoditeljController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAQwEoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T14:01:06.477Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "Kontakt.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Home\\Kontakt.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Home\\Kontakt.cshtml",
@@ -684,7 +755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Grupa\\Create.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Grupa\\Create.cshtml",
@@ -696,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Roditelj\\Create.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Roditelj\\Create.cshtml",
@@ -708,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "Grupa.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Models\\Grupa.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Models\\Grupa.cs",
@@ -720,7 +791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "Prisustvo.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Models\\Prisustvo.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Models\\Prisustvo.cs",
@@ -732,7 +803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "Uloga.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Models\\Uloga.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Models\\Uloga.cs",
@@ -744,7 +815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "Korisnik.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Models\\Korisnik.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Models\\Korisnik.cs",
@@ -756,7 +827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "Create.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Roditelj\\Create.cshtml.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Roditelj\\Create.cshtml.cs",
@@ -768,31 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ObavijestController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\ObavijestController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\ObavijestController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\ObavijestController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\ObavijestController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T09:11:57.969Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "VaspitacController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\VaspitacController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\VaspitacController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\VaspitacController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\VaspitacController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAkwDIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T11:09:16.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Edit.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Obavijest\\Edit.cshtml",
@@ -804,7 +851,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "Dijete.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Models\\Dijete.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Models\\Dijete.cs",
@@ -816,7 +863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Grupa\\Edit.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Grupa\\Edit.cshtml",
@@ -828,7 +875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Dijete\\Edit.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Dijete\\Edit.cshtml",
@@ -840,19 +887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "AktivnostController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AktivnostController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\AktivnostController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AktivnostController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\AktivnostController.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAowFgAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T09:10:55.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "Aktivnost.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Models\\Aktivnost.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Models\\Aktivnost.cs",
@@ -864,7 +899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "Choice.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Choice.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Obavijest\\Choice.cshtml",
@@ -876,7 +911,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Delete.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Obavijest\\Delete.cshtml",
@@ -888,19 +923,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
-              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
-              "RelativeToolTip": "PixelVrtic\\Views\\Aktivnost\\Create.cshtml",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAuwFUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-01T12:01:39.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Aktivnost\\Edit.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Aktivnost\\Edit.cshtml",
@@ -912,7 +935,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Dijete\\Create.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Dijete\\Create.cshtml",
@@ -924,7 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Prisustvo\\Index.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Prisustvo\\Index.cshtml",
@@ -936,7 +959,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Program.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Program.cs",
@@ -948,7 +971,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -960,7 +983,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "PixelVrtic\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -972,7 +995,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
@@ -984,7 +1007,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Obavijest\\Index.cshtml",
               "RelativeDocumentMoniker": "PixelVrtic\\Views\\Obavijest\\Index.cshtml",
@@ -993,30 +1016,6 @@
               "ViewState": "AgIAAAoAAAAAAAAAAAAiwEoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-27T09:16:36.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "DijeteController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\DijeteController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\DijeteController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\DijeteController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\DijeteController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T09:09:45.902Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "PixelVrtic\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "PixelVrtic\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T12:08:37.341Z"
             },
             {
               "$type": "Document",
