@@ -17,7 +17,7 @@
         {
             <div class="card">
                 <div class="avatar"></div>
-                <h2 class="name">@vaspitac.ime @vaspitac.prezime</h2>
+                <h2 class="name" style="color: #303053;">@vaspitac.ime @vaspitac.prezime</h2>
                 <p class="group">
                     @(vaspitac.idGrupe.HasValue && grupe.ContainsKey(vaspitac.idGrupe.Value)
                         ? grupe[vaspitac.idGrupe.Value]
@@ -44,9 +44,9 @@
     .container {
         padding: 2rem;
         background-color: #fde9f0;
-        color: #fff;
         min-height: 100vh;
     }
+
 
     .section-title {
         color: #303053;
@@ -153,6 +153,5 @@
 
         .page.current {
             background-color: #4e4e8e;
-            color: #fff;
         }
 </style>

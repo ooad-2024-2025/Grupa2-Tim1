@@ -17,25 +17,6 @@
             background-color: #fde9f0;
         }
 
-        .sidebar {
-            background-color: #d0f0ff;
-            padding: 1.5rem 1rem;
-        }
-
-            .sidebar a {
-                display: block;
-                color: #333;
-                padding: 10px;
-                margin-bottom: 10px;
-                border-radius: 10px;
-                text-decoration: none;
-            }
-
-                .sidebar a.active, .sidebar a:hover {
-                    background-color: #fff;
-                    font-weight: 600;
-                }
-
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
@@ -64,107 +45,19 @@
             padding: 0.5rem;
         }
 
-        @@media (max-width: 768px) {
-            .sidebar
-
-        {
-            width: 100%;
-            position: relative;
-        }
-
-        }
+   
     </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row flex-column flex-md-row">
-            <!-- Sidebar 
-            <div class="col-12 col-md-3 col-lg-2 sidebar">
-                <div class="logo">Pixel</div>
-                <a class="active" asp-controller="Admin" asp-action="Dashboard">Dashboard</a>
-                <a asp-controller="Roditelj" asp-action="Index">Roditelji</a>
-                <a asp-controller="Dijete" asp-action="Index">Djeca</a>
-                <a asp-controller="Vaspitac" asp-action="Index">Vaspitači</a>
-                <a asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
-                <a asp-controller="Finansije" asp-action="Index">Finansije</a>
-                <a asp-controller="Obavijest" asp-action="Index">Obavještenja</a>
-                <a class="nav-link" asp-area="Identity" asp-page="/Account/Logout">Odjava</a>
-            </div>
-            Main content -->
             <div class="col py-4 px-4">
                 <h3 class="mb-4">Dashboard</h3>
 
-                <div class="row text-center mb-4 g-2">
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <div class="card-box">Roditelja<br><strong>32</strong></div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <div class="card-box">Djeca<br><strong>45</strong></div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <div class="card-box">Vaspitača<br><strong>10</strong></div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <div class="card-box">Aktivnosti<br><strong>40</strong></div>
-                    </div>
-                </div>
-
-                <div class="card-box chart-placeholder mb-4">
-                    <p class="text-center">Grafikon prisustva prema mjesecima</p>
-                </div>
-
-                <div class="row mb-4 g-3">
-                    <div class="col-12 col-md-6">
-                        <div class="calendar">
-                            <h5>Kalendar</h5>
-                            <p>Mart 2025</p>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr><th>Pon</th><th>Uto</th><th>Sri</th><th>Čet</th><th>Pet</th><th>Sub</th><th>Ned</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-                                    <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="calendar">
-                            <h5>Neplaćene naknade</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>XY - Grupa VIA</span><strong>50,00€</strong>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>AB - Grupa VIA</span><strong>50,00€</strong>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-12 col-md-6">
-                        <div class="notifications">
-                            <h5>Obavještenja</h5>
-                            <ul>
-                                <li>Vaspitač 1: Lorem ipsum tekst obavještenja...</li>
-                                <li>Vaspitač 2: Lorem ipsum tekst obavještenja...</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="activity-section">
-                            <h5>Trenutne aktivnosti</h5>
-                            <ul>
-                                <li>Učenje - Lorem opis...</li>
-                                <li>Slikanje - Lorem opis...</li>
-                                <li>Igranje - Lorem opis...</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <div class="card-box">Roditelja<br><strong>@ViewBag.RoditeljCount</strong></div>
+                <div class="card-box">Djeca<br><strong>@ViewBag.DjecaCount</strong></div>
+                <div class="card-box">Vaspitača<br><strong>@ViewBag.VaspitacCount</strong></div>
+                <div class="card-box">Aktivnosti<br><strong>@ViewBag.AktivnostiCount</strong></div>
 
             </div>
         </div>

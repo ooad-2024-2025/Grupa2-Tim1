@@ -171,6 +171,7 @@ namespace PixelVrtic.Controllers
             return _context.Prisustvo.Any(e => e.id == id);
         }
 
+        [Authorize(Roles = "Administrator, Vaspitac")]
         public IActionResult QR()
         {
             return View();

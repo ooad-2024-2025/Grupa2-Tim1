@@ -14,32 +14,31 @@
     <title>@ViewData["Title"] - Pixel Vrtić</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/homecss.css" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
 
-        .sidebar {
-            background-color: #d0f0ff;
-            padding: 1.5rem 1rem;
-            min-height: 100vh;
-        }
-
-            .sidebar a {
-                display: block;
-                color: #333;
-                padding: 10px;
-                margin-bottom: 10px;
-                border-radius: 10px;
-                text-decoration: none;
+            body .sidebar {
+                background-color: #d0f0ff !important;
+                padding: 1.5rem 1rem !important;
+                min-height: 100vh !important;
             }
 
-                .sidebar a.active,
-                .sidebar a:hover {
-                    background-color: #fff;
-                    font-weight: 600;
+                body .sidebar a {
+                    display: block !important;
+                    color: #333 !important;
+                    padding: 10px !important;
+                    margin-bottom: 10px !important;
+                    border-radius: 10px !important;
+                    text-decoration: none !important;
                 }
+
+                    body .sidebar a.active,
+                    body .sidebar a:hover {
+                        background-color: #fff !important;
+                        font-weight: 600 !important;
+                    }
 
         .logo {
             font-weight: bold;
@@ -53,6 +52,25 @@
                 position: relative;
                 min-height: auto;
             }
+        }
+
+        .sidebar, .sidebar * {
+            font-family: 'Poppins', 'Alexandria', 'Figma Hand', sans-serif !important;
+        }
+
+            .sidebar, .sidebar * {
+                font-family: 'Poppins', 'Alexandria', sans-serif !important;
+            }
+
+                .sidebar .logo {
+                    margin-bottom: 1.2rem; /* standardize this */
+                }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #fde9f0;
+            height: 100%;
         }
     </style>
 </head>
@@ -99,6 +117,8 @@
                         <a class="@(currentController == "Aktivnost" ? "active" : "")" asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
                         <a class="@(currentController == "Grupe" ? "active" : "")" asp-controller="Grupa" asp-action="Index">Grupe</a>
                         <a class="@(currentController == "Obavijest" ? "active" : "")" asp-controller="Obavijest" asp-action="Choice">Obavještenja</a>
+                        <a class="@(currentController == "Prisustvo" ? "active" : "")" asp-controller="Prisustvo" asp-action="QR">Prisustvo</a>
+
                     }
                     else if (User.IsInRole("Vaspitac"))
                     {

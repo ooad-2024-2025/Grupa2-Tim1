@@ -140,7 +140,7 @@ namespace PixelVrtic.Areas.Identity.Pages.Account
                     }
                     else if (await _signInManager.UserManager.IsInRoleAsync(user, "Vaspitac"))
                     {
-                        return RedirectToAction("Dashboard", "Admin");
+                        return RedirectToAction("Dashboard", "Vaspitac");
                     }
 
                     return LocalRedirect(returnUrl); // fallback

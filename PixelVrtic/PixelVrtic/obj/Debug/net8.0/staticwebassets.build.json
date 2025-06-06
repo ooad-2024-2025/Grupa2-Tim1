@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9q1e5DVYNMwmEgVDU1p1XSoufxLbhSDstArfm7Nc5Ds=",
+  "Hash": "mdSw13Xq1hpQc12TYpwA0S+dDawOA2ukZExXTCE/Pv0=",
   "Source": "PixelVrtic",
   "BasePath": "_content/PixelVrtic",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "86xus3rn5l",
-      "Integrity": "kARFrXH7RCije4e2I88qvNbievB5mj6QBIhVLfTs2ig=",
+      "Fingerprint": "1pitbmp4ug",
+      "Integrity": "5ZYYexVTnopErPspgs2449g8c7k/tOLYjDpfa1kilts=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\homecss.css"
@@ -1354,8 +1354,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "esqbc2uunn",
+      "Integrity": "om+s/Vs3AHr4oEyHsLG4oYA2Ii6PdFAKSMMPk2h8vnY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2917,7 +2917,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/homecss.86xus3rn5l.css",
+      "Route": "css/homecss.1pitbmp4ug.css",
       "AssetFile": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\homecss.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2927,7 +2927,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33014"
+          "Value": "33016"
         },
         {
           "Name": "Content-Type",
@@ -2935,11 +2935,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kARFrXH7RCije4e2I88qvNbievB5mj6QBIhVLfTs2ig=\""
+          "Value": "\"5ZYYexVTnopErPspgs2449g8c7k/tOLYjDpfa1kilts=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 10:48:19 GMT"
+          "Value": "Fri, 06 Jun 2025 17:43:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2949,7 +2949,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "86xus3rn5l"
+          "Value": "1pitbmp4ug"
         },
         {
           "Name": "label",
@@ -2957,7 +2957,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kARFrXH7RCije4e2I88qvNbievB5mj6QBIhVLfTs2ig="
+          "Value": "sha256-5ZYYexVTnopErPspgs2449g8c7k/tOLYjDpfa1kilts="
         }
       ]
     },
@@ -2972,7 +2972,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33014"
+          "Value": "33016"
         },
         {
           "Name": "Content-Type",
@@ -2980,11 +2980,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kARFrXH7RCije4e2I88qvNbievB5mj6QBIhVLfTs2ig=\""
+          "Value": "\"5ZYYexVTnopErPspgs2449g8c7k/tOLYjDpfa1kilts=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 10:48:19 GMT"
+          "Value": "Fri, 06 Jun 2025 17:43:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2994,52 +2994,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kARFrXH7RCije4e2I88qvNbievB5mj6QBIhVLfTs2ig="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "362"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:44:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-5ZYYexVTnopErPspgs2449g8c7k/tOLYjDpfa1kilts="
         }
       ]
     },
@@ -3054,7 +3009,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "366"
         },
         {
           "Name": "Content-Type",
@@ -3062,11 +3017,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"om+s/Vs3AHr4oEyHsLG4oYA2Ii6PdFAKSMMPk2h8vnY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:44:41 GMT"
+          "Value": "Fri, 06 Jun 2025 17:41:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3076,7 +3031,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-om+s/Vs3AHr4oEyHsLG4oYA2Ii6PdFAKSMMPk2h8vnY="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.esqbc2uunn.css",
+      "AssetFile": "C:\\Users\\Administrator\\ooad\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "366"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"om+s/Vs3AHr4oEyHsLG4oYA2Ii6PdFAKSMMPk2h8vnY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Jun 2025 17:41:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "esqbc2uunn"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-om+s/Vs3AHr4oEyHsLG4oYA2Ii6PdFAKSMMPk2h8vnY="
         }
       ]
     },
