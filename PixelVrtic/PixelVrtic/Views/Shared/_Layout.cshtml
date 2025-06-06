@@ -122,13 +122,12 @@
                     }
                     else if (User.IsInRole("Vaspitac"))
                     {
-                        <a class="@(currentController == "Vaspitac" && currentAction == "Dashboard" ? "active" : "")" asp-controller="Vaspitac" asp-action="Dashboard">Dashboard</a>
+                        <a class="@(currentController == "Vaspitac" && currentAction == "Dashboard" ? "active" : "")" asp-controller="Vaspitac" asp-action="Dashboard">Registracija Prisustva</a>
                         <a class="@(currentController == "Roditelj" ? "active" : "")" asp-controller="Roditelj" asp-action="Index">Roditelji</a>
                         <a class="@(currentController == "Dijete" ? "active" : "")" asp-controller="Dijete" asp-action="Index">Djeca</a>
                         <a class="@(currentController == "Aktivnost" ? "active" : "")" asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
                         <a class="@(currentController == "Grupe" ? "active" : "")" asp-controller="Grupa" asp-action="Index">Grupe</a>
                         <a class="@(currentController == "Obavijest" ? "active" : "")" asp-controller="Obavijest" asp-action="Choice">Obavještenja</a>
-                        <a class="@(currentController == "Prisustvo" ? "active" : "")" asp-controller="Prisustvo" asp-action="QR">Prisustvo</a>
                     }
                     else if (User.IsInRole("Roditelj"))
                     {

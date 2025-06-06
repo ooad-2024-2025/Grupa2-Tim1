@@ -27,6 +27,14 @@ namespace PixelVrtic.Controllers
                 {
                     return RedirectToAction("Dashboard", "Admin");
                 }
+                if (user != null && await _userManager.IsInRoleAsync(user, "Vaspitac"))
+                {
+                    return RedirectToAction("Dashboard", "Vaspitac");
+                }
+                if (user != null && await _userManager.IsInRoleAsync(user, "Roditelj"))
+                {
+                    return RedirectToAction("Dashboard", "Roditelj");
+                }
             }
             return View();
         }

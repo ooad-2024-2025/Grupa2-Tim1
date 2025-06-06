@@ -176,5 +176,76 @@ namespace PixelVrtic.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateFromQr()
+        {
+            using var reader = new StreamReader(Request.Body);
+            var idRoditelja = await reader.ReadToEndAsync();
+
+            if (string.IsNullOrWhiteSpace(idRoditelja))
+            {
+                return Content("Greška: Prazan QR kod.", "text/plain");
+            }
+
+            var dijete = await _context.Dijete
+                .FirstOrDefaultAsync(d => d.roditeljId == idRoditelja);
+
+            if (dijete == null)
+            {
+                return Content("Greška: Nema djeteta s tim roditelj ID-om.", "text/plain");
+            }
+
+            var danas = DateTime.Today;
+            var sutra = danas.AddDays(1);
+
+            // Provjera postoji li već prisustvo za ovo dijete danas
+            bool postojiPrisustvo = await _context.Prisustvo
+                .AnyAsync(p => p.dijeteId == dijete.id && p.datum >= danas && p.datum < sutra);
+
+            if (postojiPrisustvo)
+            {
+                return Content($"Već je zabilježeno prisustvo za {dijete.ime} {dijete.prezime} .", "text/plain");
+            }
+
+            var prisustvo = new Prisustvo
+            {
+                dijeteId = dijete.id,
+                datum = DateTime.Now,
+                prisutan = true,
+                razlogOdsutnosti = null
+            };
+
+            _context.Prisustvo.Add(prisustvo);
+            await _context.SaveChangesAsync();
+
+            return Content($"Prisustvo zabilježeno za {dijete.ime} {dijete.prezime} u {DateTime.Now:HH:mm:ss}", "text/plain");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetDanasnjaPrisustva()
+        {
+            var danas = DateTime.Today;
+            var sutra = danas.AddDays(1);
+
+            var prisustva = await (
+                from p in _context.Prisustvo
+                join d in _context.Dijete on p.dijeteId equals d.id
+                where p.datum >= danas && p.datum < sutra
+                orderby p.datum descending
+                select new
+                {
+                    Ime = d.ime,
+                    Prezime = d.prezime,
+                    Vrijeme = p.datum.ToString("HH:mm:ss")
+                }
+            ).ToListAsync();
+
+            return new JsonResult(prisustva);
+        }
+
+
+
     }
 }
