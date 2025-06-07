@@ -16,7 +16,11 @@
 
 <div class="page-header">
     <div class="header-actions">
-        <input type="text" placeholder="Pretraži djecu" class="search-bar" />
+        <form method="get" class="d-flex gap-2">
+            <input type="text" name="search" placeholder="Pretraži djecu" class="search-bar" value="@Context.Request.Query["search"]" />
+            <button type="submit" class="btn btn-sm btn-outline-secondary">Pretraži</button>
+        </form>
+
         <a asp-action="Create" class="add-button">+ Dodaj dijete</a>
         @if (Context.Request.Query.ContainsKey("idGrupe"))
         {
@@ -29,7 +33,7 @@
     <thead>
         <tr>
             <th><input type="checkbox" /></th>
-            <th>Ime</th>            <th>Datum pridruživanja</th>
+            <th>Ime</th>            <th>Datum rođenja</th>
             <th>Ime roditelja</th>
             <th>Grad</th>
             <th>Kontakt</th>
@@ -42,7 +46,10 @@
         {
             <tr>
                 <td><input type="checkbox" /></td>
-                <td><div class="child-avatar"></div> @item.ime @item.prezime</td>
+                <td><div class="child-avatar">
+                        <img src="~/images/@item.fotografija" alt="Slika djeteta" />
+                    </div> @item.ime @item.prezime
+                </td>
                 <td>@item.datumRodjenja</td> <!-- static for now -->
                 <td>@item.Korisnik?.ime @item.Korisnik?.prezime</td>
                 <td>@item.mjestoRodenja</td> <!-- static for now -->
@@ -53,7 +60,7 @@
                     <span class="icon-mail"><a href="mailto:@item.Korisnik?.Email"><i class="bi bi-envelope"></i></a></span>
                 </td>
                 <td>
-                    <span class="group-label group-color-@item.grupa.id">@item.grupa.naziv</span>
+                    <span class="group-label group-color-@((item.grupa.id % 4) + 1)">@item.grupa.naziv</span>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.id" style="text-decoration: none; color: gray; font-size: 2em;">...</a>
@@ -120,12 +127,21 @@
 
     .child-avatar {
         display: inline-block;
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        background-color: #999;
+        overflow: hidden;
         margin-right: 0.5rem;
+        vertical-align: middle;
     }
+
+        .child-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
 
     .icon-phone, .icon-mail {
         display: inline-block;

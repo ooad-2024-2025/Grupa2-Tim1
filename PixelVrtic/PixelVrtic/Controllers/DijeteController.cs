@@ -28,8 +28,7 @@ namespace PixelVrtic.Controllers
         // GET: Dijete
         // GET: Dijete
         [Authorize(Roles = "Administrator, Vaspitac")]
-
-        public async Task<IActionResult> Index(int? idGrupe)
+        public async Task<IActionResult> Index(int? idGrupe, string search)
         {
             var dijeteQuery = _context.Dijete
                 .Include(d => d.Korisnik)
@@ -39,6 +38,16 @@ namespace PixelVrtic.Controllers
             if (idGrupe.HasValue)
             {
                 dijeteQuery = dijeteQuery.Where(d => d.grupaId == idGrupe.Value);
+            }
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                dijeteQuery = dijeteQuery.Where(d =>
+                    d.ime.ToLower().Contains(search.ToLower()) ||
+                    d.prezime.ToLower().Contains(search.ToLower()) ||
+                    d.Korisnik.ime.ToLower().Contains(search.ToLower()) ||
+                    d.Korisnik.prezime.ToLower().Contains(search.ToLower()));
+
             }
 
             var dijeca = await dijeteQuery.ToListAsync();

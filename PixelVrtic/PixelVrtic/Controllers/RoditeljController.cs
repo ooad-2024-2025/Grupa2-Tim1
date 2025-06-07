@@ -94,20 +94,39 @@ namespace PixelVrtic.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
-
-        public IActionResult Edit(string id, Korisnik korisnik)
+        public async Task<IActionResult> Edit(string id, Korisnik korisnik)
         {
             if (id != korisnik.Id)
                 return NotFound();
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return View(korisnik);
+
+            var postojeci = await _userManager.FindByIdAsync(id);
+            if (postojeci == null || postojeci.uloga != Uloga.roditelj)
+                return NotFound();
+
+            // Ažuriranje dozvoljenih polja
+            postojeci.ime = korisnik.ime;
+            postojeci.prezime = korisnik.prezime;
+            postojeci.datumRodjenja = korisnik.datumRodjenja;
+            postojeci.grad = korisnik.grad;
+            postojeci.brojTelefona = korisnik.brojTelefona;
+            postojeci.Email = korisnik.Email;
+            postojeci.UserName = korisnik.Email; // Sync userName ako koristiš email kao username
+
+            try
             {
-                _context.Update(korisnik);
-                _context.SaveChanges();
+                await _userManager.UpdateAsync(postojeci);
                 return RedirectToAction(nameof(Index));
             }
-            return View(korisnik);
+            catch (DbUpdateConcurrencyException)
+            {
+                ModelState.AddModelError("", "Dogodila se greška pri ažuriranju. Molimo pokušajte ponovo.");
+                return View(korisnik);
+            }
         }
+
 
         [Authorize(Roles = "Administrator")]
 
