@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ImranVlajcic\\Desktop\\Grupa2-Tim1\\PixelVrtic\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|c:\\users\\imranvlajcic\\desktop\\grupa2-tim1\\pixelvrtic\\pixelvrtic\\views\\vaspitac\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41F36E82-4201-4D9E-AFB3-3A69D3B8CD62}|PixelVrtic\\PixelVrtic.csproj|solutionrelative:pixelvrtic\\views\\vaspitac\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\ImranVlajcic\\Desktop\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Vaspitac\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "PixelVrtic\\Views\\Vaspitac\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\ImranVlajcic\\Desktop\\Grupa2-Tim1\\PixelVrtic\\PixelVrtic\\Views\\Vaspitac\\Dashboard.cshtml",
+              "RelativeToolTip": "PixelVrtic\\Views\\Vaspitac\\Dashboard.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAUAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T23:20:02.286Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
