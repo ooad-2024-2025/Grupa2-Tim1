@@ -26,9 +26,19 @@ namespace PixelVrtic.Controllers
         [Authorize(Roles = "Administrator, Vaspitac")]
         public IActionResult Index()
         {
-            var roditelji = _userManager.Users.Where(u => u.uloga == Uloga.roditelj).ToList();
+            var roditelji = _userManager.Users
+                .Where(u => u.uloga == Uloga.roditelj)
+                .ToList();
+
+            var djeca = _context.Dijete
+                .Where(d => roditelji.Select(r => r.Id).Contains(d.roditeljId))
+                .ToList();
+
+            ViewBag.Djeca = djeca;
+
             return View(roditelji);
         }
+
         [Authorize(Roles = "Administrator")]
 
         public IActionResult Create()

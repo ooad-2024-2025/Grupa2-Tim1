@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Roditelji";
+    var djeca = ViewBag.Djeca as List<PixelVrtic.Models.Dijete>;
 }
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -99,7 +100,7 @@
                         <tr>
                             <th></th>
                             <th>Ime</th>
-                            <th>Datum pridruživanja</th>
+                            <th>Datum rođenja</th>
                             <th>Ime djeteta</th>
                             <th>Grad</th>
                             <th>Kontakt</th>
@@ -117,7 +118,15 @@
                                     </div>
                                 </td>
                                 <td>@r.datumRodjenja.ToString()</td>
-                                <td>ovdje dodati ime dijeteta</td>
+                                <td>
+                                    @{
+                                        var djecaRoditelja = djeca.Where(d => d.roditeljId == r.Id).ToList();
+                                        foreach (var dijete in djecaRoditelja)
+                                        {
+                                            <div>@dijete.ime @dijete.prezime</div>
+                                        }
+                                    }
+                                </td>
                                 <td>@r.grad</td>
                                 <td>
                                     <a href="tel:@r.brojTelefona" class="me-2"><i class="bi bi-telephone"></i></a>
@@ -125,6 +134,7 @@
                                 </td>
                             </tr>
                         }
+
                     </tbody>
 
                 </table>
