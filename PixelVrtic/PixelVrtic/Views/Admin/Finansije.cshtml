@@ -1,0 +1,51 @@
+﻿@model List<PixelVrtic.Models.FinansijskaEvidencija>
+
+@{
+    ViewData["Title"] = "Finansije";
+
+    int mjesec = Model.FirstOrDefault()?.mjesec ?? DateTime.Now.Month;
+    int godina = Model.FirstOrDefault()?.godina ?? DateTime.Now.Year;
+
+    string mjesecNaziv = new DateTime(godina, mjesec, 1).ToString("MMMM yyyy");
+}
+
+<h2>Finansije za @mjesecNaziv</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Roditelj</th>
+            <th>Iznos (KM)</th>
+            <th>Status</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@item.Roditelj.ime @item.Roditelj.prezime</td>
+                    <td>@item.iznos.ToString("0.00") KM</td>
+                    <td>
+                    @if (item.uplaceno)
+                    {
+                                <span class="text-success">Uplaćeno ✅</span>
+                    }
+                    else
+                    {
+                                <span class="text-danger">Nije uplaćeno ❌</span>
+                    }
+                    </td>
+                    <td>
+                    @if (!item.uplaceno)
+                    {
+                                <form asp-action="OznaciKaoPlaceno" method="post">
+                                    <input type="hidden" name="id" value="@item.id" />
+                                    <button class="btn btn-sm btn-success">Označi kao uplaćeno</button>
+                                </form>
+                    }
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

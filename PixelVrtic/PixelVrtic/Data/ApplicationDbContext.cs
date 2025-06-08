@@ -19,6 +19,8 @@ namespace PixelVrtic.Data
         public DbSet<Prisustvo> Prisustvo { get; set; }
         public DbSet<Dijete> Dijete { get; set; }
         public DbSet<Aktivnost> Aktivnost { get; set; }
+        public DbSet<FinansijskaEvidencija> FinansijskaEvidencija { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -15,17 +15,19 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
 <div class="page-header">
-    <div class="header-actions">
+    <div class="header-actions d-flex align-items-center gap-2">
         <form method="get" class="d-flex gap-2">
             <input type="text" name="search" placeholder="Pretraži djecu" class="search-bar" value="@Context.Request.Query["search"]" />
-            <button type="submit" class="btn btn-sm btn-outline-secondary">Pretraži</button>
+            <button type="submit" class="export-button btn btn-sm">Pretraži</button>
         </form>
 
-        <a asp-action="Create" class="add-button">+ Dodaj dijete</a>
         @if (Context.Request.Query.ContainsKey("idGrupe"))
         {
-            <a asp-action="Index" class="btn btn-sm btn-outline-secondary">Prikaži sve grupe</a>
+            <a asp-action="Index" class="add-button ms-auto">Prikaži sve grupe</a>
         }
+
+        <a asp-action="Create" class="add-button ms-auto">+ Dodaj dijete</a>
+
     </div>
 </div>
 
@@ -82,12 +84,7 @@
         background-color: #fde9f0;
         font-family: 'Segoe UI', sans-serif;
     }
-    .page-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
+
 
     .search-bar {
         padding: 0.5rem 1rem;
@@ -96,22 +93,6 @@
         outline: none;
     }
 
-    .add-button {
-        background-color: lightpink;
-        border-radius: 20px;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-    }
-
-        .add-button:hover,
-        .add-button:focus {
-            background-color: pink; /* hotpink, matches the theme */
-            color: #fff;
-            box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
-            text-decoration: none;
-        }
 
     .children-table {
         background-color: #ffffff;
@@ -193,4 +174,55 @@
             background-color: #c7f9ff;
             font-weight: bold;
         }
+
+
+    /* Move +Dodaj dijete button to right with margin-left:auto */
+    .add-button {
+        background-color: #ec4899; /* hot pink */
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        margin-left: auto; /* pushes it to right */
+        white-space: nowrap;
+        transition: background-color 0.3s ease;
+    }
+
+        .add-button:hover,
+        .add-button:focus {
+            background-color: #db2777; /* deeper pink */
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(219, 39, 119, 0.4);
+            text-decoration: none;
+        }
+
+    /* New export button with contrasting but harmonious color */
+    .export-button {
+        background-color: #3b82f6; /* bright blue */
+        color: white !important;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background-color 0.3s ease;
+    }
+
+        .export-button:hover,
+        .export-button:focus {
+            background-color: #2563eb; /* darker blue */
+            color: white !important;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            text-decoration: none;
+        }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem; /* added space below header */
+    }
+
+
 </style>

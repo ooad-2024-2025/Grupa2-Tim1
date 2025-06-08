@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PixelVrtic.Data;
 using PixelVrtic.Models;
@@ -9,10 +10,13 @@ using PixelVrtic.Models;
 public class VaspitacController : Controller
 {
     private readonly ApplicationDbContext _context;
+    private readonly UserManager<Korisnik> _userManager;
 
-    public VaspitacController(ApplicationDbContext context)
+
+    public VaspitacController(ApplicationDbContext context, UserManager<Korisnik> userManager)
     {
         _context = context;
+        _userManager = userManager;
     }
     [Authorize(Roles = "Administrator")]
 
@@ -54,10 +58,18 @@ public class VaspitacController : Controller
     }
 
     [Authorize(Roles = "Administrator,Vaspitac")]
-
-
     public IActionResult Dashboard()
     {
+        var korisnik = _userManager.GetUserAsync(User);
+
+        if (korisnik == null)
+            return Unauthorized();
+
+        var imePrezimeFormatted = $"Zdravo, {korisnik.Result.ime} {korisnik.Result.prezime}";
+        ViewBag.ImePrezime = imePrezimeFormatted;
+
         return View();
     }
+
+
 }

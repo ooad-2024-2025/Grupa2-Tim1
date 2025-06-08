@@ -7,7 +7,6 @@ using PixelVrtic.Models;
 
 namespace PixelVrtic.Controllers
 {
-
     [Authorize]
 
     public class AdminController : Controller
@@ -32,5 +31,77 @@ namespace PixelVrtic.Controllers
 
             return View();
         }
+
+        public IActionResult Finansije()
+        {
+            int mjesec = DateTime.Now.Month - 1;
+            int godina = DateTime.Now.Year;
+            double cijenaPoDanu = 20.0;
+
+            if (mjesec == 0) 
+            {
+                mjesec = 12;
+                godina -= 1;
+            }
+
+            var roditelji = _context.Users
+                .Where(k => k.uloga == Uloga.roditelj)
+                .ToList();
+
+            foreach (var roditelj in roditelji)
+            {
+                var dijete = _context.Dijete.FirstOrDefault(d => d.roditeljId == roditelj.Id);
+                if (dijete == null) continue;
+
+                var prisustva = _context.Prisustvo
+                    .Where(p => p.dijeteId == dijete.id && p.prisutan &&
+                                p.datum.Month == mjesec && p.datum.Year == godina)
+                    .Count();
+
+                double izracunatiIznos = prisustva * cijenaPoDanu;
+
+                var postojeca = _context.FinansijskaEvidencija
+                    .FirstOrDefault(f => f.roditeljId == roditelj.Id && f.mjesec == mjesec && f.godina == godina);
+
+                if (postojeca == null)
+                {
+                    _context.FinansijskaEvidencija.Add(new FinansijskaEvidencija
+                    {
+                        roditeljId = roditelj.Id,
+                        mjesec = mjesec,
+                        godina = godina,
+                        iznos = izracunatiIznos,
+                        uplaceno = false
+                    });
+                }
+                else
+                {
+                    postojeca.iznos = izracunatiIznos; 
+                }
+            }
+
+            _context.SaveChanges();
+
+            var evidencije = _context.FinansijskaEvidencija
+                .Include(f => f.Roditelj)
+                .Where(f => f.mjesec == mjesec && f.godina == godina)
+                .ToList();
+
+            return View(evidencije);
+        }
+
+        [HttpPost]
+        public IActionResult OznaciKaoPlaceno(int id)
+        {
+            var zapis = _context.FinansijskaEvidencija.FirstOrDefault(f => f.id == id);
+            if (zapis != null)
+            {
+                zapis.uplaceno = true;
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Finansije");
+        }
+
     }
 }

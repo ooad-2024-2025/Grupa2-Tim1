@@ -66,6 +66,21 @@
     <h3>Evidentirana prisustva danas:</h3>
     <ul id="prisustva-lista"></ul>
 </main>
+@if (User.IsInRole("Vaspitac")){
+    <div style="
+        position: absolute;
+        top: 1rem;
+        left: 300px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: purple;
+        z-index: 1000;
+    ">
+        @ViewBag.ImePrezime
+    </div>
+}
+
+
 
 
 <script>
