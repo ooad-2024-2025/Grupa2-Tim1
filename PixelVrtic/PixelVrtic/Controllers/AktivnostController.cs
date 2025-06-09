@@ -39,7 +39,7 @@ namespace PixelVrtic.Controllers
             .ToList();
 
             var user = HttpContext.User;
-            ViewBag.IsAuthorizedUser = user.IsInRole("Administrator") || user.IsInRole("Vaspitač");
+            ViewBag.IsAuthorizedUser = user.IsInRole("Administrator") || user.IsInRole("Vaspitac");
             ViewBag.Year = selectedYear;
             ViewBag.Month = selectedMonth;
 
@@ -125,6 +125,7 @@ namespace PixelVrtic.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
+            var users = _userManager.Users.ToList();
             if (id == null)
             {
                 return NotFound();
@@ -135,8 +136,9 @@ namespace PixelVrtic.Controllers
             {
                 return NotFound();
             }
-            ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
-            ViewData["idKorisnika"] = new SelectList(_userManager.Users.ToList(), "Id", "ime", aktivnost.idKorisnika);
+            ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv");
+            ViewData["idKorisnika"] = new SelectList(users, "Id", "ime");
+            ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
             return View(aktivnost);
         }
 
@@ -184,6 +186,7 @@ namespace PixelVrtic.Controllers
 
         public async Task<IActionResult> Delete(int? id)
         {
+            var users = _userManager.Users.ToList();
             if (id == null)
             {
                 return NotFound();
@@ -197,6 +200,10 @@ namespace PixelVrtic.Controllers
             {
                 return NotFound();
             }
+
+            ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv");
+            ViewData["idKorisnika"] = new SelectList(users, "Id", "ime");
+            ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
 
             return View(aktivnost);
         }

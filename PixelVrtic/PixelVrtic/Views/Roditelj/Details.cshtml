@@ -1,0 +1,85 @@
+﻿@model PixelVrtic.Models.Korisnik
+
+@{
+    ViewData["Title"] = "Detalji o roditelju";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #e0f7fa;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+        max-width: 700px;
+        margin: 3rem auto;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-title {
+        font-weight: bold;
+        color: #3399cc;
+        margin-bottom: 2rem;
+    }
+
+    .data-label {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #333;
+    }
+
+    .data-value {
+        margin-bottom: 1rem;
+        padding: 0.5rem 0.75rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .btn-secondary {
+        border-radius: 20px;
+        padding: 0.5rem 1.5rem;
+    }
+</style>
+
+<div class="form-container">
+    <h2 class="form-title">DETALJI O RODITELJU</h2>
+
+    <div class="mb-3">
+        <div class="data-label">Ime</div>
+        <div class="data-value">@Model.ime</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Prezime</div>
+        <div class="data-value">@Model.prezime</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Datum rođenja</div>
+        <div class="data-value">@Model.datumRodjenja?.ToString("dd.MM.yyyy")</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Grad</div>
+        <div class="data-value">@Model.grad</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Broj telefona</div>
+        <div class="data-value">@Model.brojTelefona</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Email</div>
+        <div class="data-value">@Model.Email</div>
+    </div>
+
+    <div class="text-end">
+        <a asp-action="Index" class="btn btn-secondary">NAZAD</a>
+    </div>
+</div>

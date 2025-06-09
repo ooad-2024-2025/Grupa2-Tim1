@@ -48,7 +48,7 @@ namespace PixelVrtic.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
+
         [Authorize(Roles = "Administrator")]
 
         public async Task<IActionResult> Create(Korisnik korisnik, string password)
@@ -161,5 +161,19 @@ namespace PixelVrtic.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [Authorize(Roles = "Administrator, Vaspitac")]
+        public async Task<IActionResult> Details(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return NotFound();
+
+            var roditelj = await _userManager.FindByIdAsync(id);
+            if (roditelj == null || roditelj.uloga != Uloga.roditelj)
+                return NotFound();
+
+            return View(roditelj);
+        }
+
     }
 }

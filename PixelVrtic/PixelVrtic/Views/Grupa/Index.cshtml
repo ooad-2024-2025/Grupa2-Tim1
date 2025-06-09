@@ -7,7 +7,10 @@
 <div class="container">
     <div class="header-bar">
         <h1 class="section-title">Grupe</h1>
-        <a asp-action="Create" class="add-button">+ Kreiraj grupu</a>
+        @if (User.IsInRole("Administrator"))
+        {
+            <a asp-action="Create" class="add-button">+ Kreiraj grupu</a>
+        }
     </div>
 
     <div class="cards-grid">
@@ -18,16 +21,21 @@
                 <p class="group-vaspitac">
                     Vaspitač:
                     @(grupa.Korisnik != null
-                        ? grupa.Korisnik.ime + " " + grupa.Korisnik.prezime
-                        : "Nepoznat")
+                                ? grupa.Korisnik.ime + " " + grupa.Korisnik.prezime
+                                : "Nepoznat")
                 </p>
                 <div class="card-actions">
                     <a asp-controller="Dijete" asp-action="Index" asp-route-idGrupe="@grupa.id" class="open-link">
                         Otvori listu djece
                     </a>
-                    <a asp-action="Edit" asp-route-id="@grupa.id" class="edit-button" title="Uredi">
-                        ✏️
-                    </a>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@grupa.id" class="edit-button" title="Uredi">
+
+
+                            ✏️
+                        </a>
+                    }
                 </div>
             </div>
         }

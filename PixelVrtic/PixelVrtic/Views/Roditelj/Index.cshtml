@@ -10,27 +10,27 @@
 
 <style>
     body {
-        background-color: #fde9f0;
-        font-family: 'Segoe UI', sans-serif;
+    background-color: #fde9f0;
+    font-family: 'Segoe UI', sans-serif;
     }
 
     .sidebar {
-        background-color: #c9f0ff;
-        height: 100vh;
-        padding-top: 2rem;
+    background-color: #c9f0ff;
+    height: 100vh;
+    padding-top: 2rem;
     }
 
     .table-custom {
-        background-color: white;
-        border-radius: 12px;
-        overflow: hidden;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
     }
 
     .btn-group-tag {
-        border-radius: 20px;
-        padding: 0.25rem 1rem;
-        font-weight: bold;
-        color: white;
+    border-radius: 20px;
+    padding: 0.25rem 1rem;
+    font-weight: bold;
+    color: white;
     }
 
     .group-IIA { background-color: #f97a7a; }
@@ -39,45 +39,54 @@
     .group-VA  { background-color: #f97a7a; }
 
     .avatar-circle {
-        background-color: #333;
-        border-radius: 50%;
-        color: white;
-        width: 32px;
-        height: 32px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
+    background-color: #333;
+    border-radius: 50%;
+    color: white;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
     }
 
     .content-area {
-        padding: 2rem;
+    padding: 2rem;
     }
 
     .add-button {
-        background-color: lightpink;
-        border-radius: 20px;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        border: none;
+    background-color: lightpink;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border: none;
     }
 
-        .add-button:hover,
-        .add-button:focus {
-            background-color: pink; /* hotpink, matches the theme */
-            color: #fff;
-            box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
-            text-decoration: none;
-        }
+    .add-button:hover,
+    .add-button:focus {
+    background-color: pink; /* hotpink, matches the theme */
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
+    text-decoration: none;
+    }
 
     .clickable-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    }
+
+    .clickable-row:hover td {
+    background-color: lightgray !important;
+    }
+
+    .clickable-row2 {
         cursor: pointer;
         transition: background-color 0.2s ease-in-out;
     }
 
-        .clickable-row:hover td {
+    .clickable-row2:hover td {
             background-color: lightgray !important;
         }
 
@@ -91,7 +100,10 @@
         <div class="col-10 content-area">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2 class="fw-bold">Roditelji</h2>
-                <a asp-action ="Create" class="add-button">+ Novi roditelj</a>
+                @if (User.IsInRole("Administrator"))
+                {
+                    <a asp-action="Create" class="add-button">+ Novi roditelj</a>
+                }
             </div>
 
             <div class="table-custom p-3 shadow-sm">
@@ -109,34 +121,62 @@
                     <tbody>
                         @foreach (var r in Model)
                         {
-                            <tr class="clickable-row" data-id="@r.Id">
-                                <td><input type="checkbox" /></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <div class="avatar-circle">@r.ime[0]@r.prezime[0]</div>
-                                        <span>@r.ime @r.prezime</span>
-                                    </div>
-                                </td>
-                                <td>@r.datumRodjenja.ToString()</td>
-                                <td>
-                                    @{
-                                        var djecaRoditelja = djeca.Where(d => d.roditeljId == r.Id).ToList();
-                                        foreach (var dijete in djecaRoditelja)
-                                        {
-                                            <div>@dijete.ime @dijete.prezime</div>
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <tr class="clickable-row" data-id="@r.Id">
+                                    <td><input type="checkbox" /></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="avatar-circle">@r.ime[0]@r.prezime[0]</div>
+                                            <span>@r.ime @r.prezime</span>
+                                        </div>
+                                    </td>
+                                    <td>@r.datumRodjenja.ToString()</td>
+                                    <td>
+                                        @{
+                                            var djecaRoditelja = djeca.Where(d => d.roditeljId == r.Id).ToList();
+                                            foreach (var dijete in djecaRoditelja)
+                                            {
+                                                <div>@dijete.ime @dijete.prezime</div>
+                                            }
                                         }
-                                    }
-                                </td>
-                                <td>@r.grad</td>
-                                <td>
-                                    <a href="tel:@r.brojTelefona" class="me-2"><i class="bi bi-telephone"></i></a>
-                                    <a href="mailto:@r.Email"><i class="bi bi-envelope"></i></a>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>@r.grad</td>
+                                    <td>
+                                        <a href="tel:@r.brojTelefona" class="me-2"><i class="bi bi-telephone"></i></a>
+                                        <a href="mailto:@r.Email"><i class="bi bi-envelope"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                            @if (User.IsInRole("Vaspitac"))
+                            {
+                                <tr class="clickable-row2" data-id="@r.Id">
+                                    <td><input type="checkbox" /></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="avatar-circle">@r.ime[0]@r.prezime[0]</div>
+                                            <span>@r.ime @r.prezime</span>
+                                        </div>
+                                    </td>
+                                    <td>@r.datumRodjenja.ToString()</td>
+                                    <td>
+                                        @{
+                                            var djecaRoditelja = djeca.Where(d => d.roditeljId == r.Id).ToList();
+                                            foreach (var dijete in djecaRoditelja)
+                                            {
+                                                <div>@dijete.ime @dijete.prezime</div>
+                                            }
+                                        }
+                                    </td>
+                                    <td>@r.grad</td>
+                                    <td>
+                                        <a href="tel:@r.brojTelefona" class="me-2"><i class="bi bi-telephone"></i></a>
+                                        <a href="mailto:@r.Email"><i class="bi bi-envelope"></i></a>
+                                    </td>
+                                </tr>
+                            }
                         }
-
                     </tbody>
-
                 </table>
             </div>
         </div>
@@ -152,6 +192,17 @@
                 if (e.target.tagName === 'INPUT' || e.target.tagName === 'A' || e.target.closest('a')) return;
                 const id = this.getAttribute('data-id');
                 window.location.href = `/Roditelj/Edit/${id}`;
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const rows = document.querySelectorAll('.clickable-row2');
+        rows.forEach(row => {
+            row.addEventListener('click', function (e) {
+                // Ignore if checkbox or link was clicked
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'A' || e.target.closest('a')) return;
+                const id = this.getAttribute('data-id');
+                window.location.href = `/Roditelj/Details/${id}`;
             });
         });
     });

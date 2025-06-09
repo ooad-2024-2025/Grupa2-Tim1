@@ -1,6 +1,7 @@
-﻿@page
+﻿
 @model PixelVrtic.Views.Vaspitac.DashboardModel
 @{
+    ViewData["Title"] = "Dashboard";
 }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js"
@@ -9,81 +10,143 @@
 
 <style>
     body {
-        background: #fefbf8;
-        margin: 0;
-        padding: 0;
+        background-color: #fde9f1;
+        font-family: 'Poppins', sans-serif;
     }
 
     main {
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: 2rem;
-        padding: 2rem;
+        gap: 4rem;
+        padding: 4rem;
         flex-wrap: wrap;
     }
 
+    .card {
+        background: white;
+        border-radius: 32px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        padding: 3rem;
+    }
+
+    #reader-card {
+        width: 520px;
+        min-height: 420px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5rem; /* Add top padding */
+        padding-right: 4rem; /* Add right padding */
+        position: relative;
+    }
+
+
+        #reader-card h2 {
+            margin: 0 0 2rem 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+    #camera-icon {
+        font-size: 7rem;
+        color: #06184c;
+    }
+
+    .clock {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-weight: 800;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+        .clock::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(to bottom, #d2f0fd, #c1e3f8);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
     #reader {
-        width: 500px;
-        height: 500px;
-        border: 4px solid #fde9f1;
-        border-radius: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        background-color: #fff5f0;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 2rem;
     }
 
-    #result {
-        max-width: 400px;
-        font-size: 1.2rem;
-        background: #fffaf4;
-        padding: 1.5rem;
-        border-radius: 16px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-left: 6px solid #fde9f1;
-        color: #333;
+    #result-card {
+        width: 460px;
+        max-height: 600px;
+        padding: 2.5rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
-        #result h2 {
-            margin-top: 0;
-            color: #black;
+        #result-card h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+    #prisustva-lista {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;
+        flex: 1;
+        max-height: 300px; /* limit visible height */
+        font-size: 1.2rem; /* smaller font size */
+    }
+
+        #prisustva-lista li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0; /* reduced padding */
+            font-size: 1.2rem; /* match list font size */
+            border-bottom: 1px solid #f0f0f0;
         }
 
 
-    #reader video {
-        width: 100% !important;
-        height: 100% !important;
-        border-radius: 16px;
-        object-fit: cover;
-    }
+
 </style>
 
+
+
 <main>
-    <div id="reader"></div>
-    <div id="result"><strong>Skeniraj QR kod</strong> da se uspješno prijaviš.</div>
-
-    <hr>
-
-    <h3>Evidentirana prisustva danas:</h3>
-    <ul id="prisustva-lista"></ul>
-</main>
-@if (User.IsInRole("Vaspitac")){
-    <div style="
-        position: absolute;
-        top: 1rem;
-        left: 300px;
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: purple;
-        z-index: 1000;
-    ">
-        @ViewBag.ImePrezime
+    <!-- Scanner card -->
+    <div class="card" id="reader-card">
+        <div class="clock" id="clock">--:--</div>
+        <h2>Skenirajte QR kod</h2>
+        <div id="camera-icon">📷</div>
+        <div id="reader"></div>
     </div>
-}
 
-
-
+    <!-- Result and log card -->
+    <div id="result-card" class="card">
+        <h3>Skenirani QR kodovi</h3>
+        <ul id="prisustva-lista"></ul>
+    </div>
+</main>
 
 <script>
+    // Clock
+    function updateClock() {
+        const now = new Date();
+        const hrs = now.getHours().toString().padStart(2, '0');
+        const mins = now.getMinutes().toString().padStart(2, '0');
+        document.getElementById("clock").innerHTML = `${hrs}:${mins}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // QR Scanner
     let lastResult = null;
     const scanner = new Html5Qrcode("reader");
 
@@ -92,64 +155,51 @@
             lastResult = decodedText;
             fetch("/Prisustvo/CreateFromQr", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "text/plain"
-                },
-                body: decodedText 
+                headers: { "Content-Type": "text/plain" },
+                body: decodedText
             })
-            .then(response => response.text())
+            .then(res => res.text())
             .then(text => {
-                document.getElementById('result').innerHTML =
-                    `<h2>${text}</h2>`;
-                    if (text.includes("Prisustvo zabilježeno") || text.includes("Već je zabilježeno")) {
-        fetchPrisustva();
-    }
+                if (text.includes("Prisustvo zabilježeno") || text.includes("Već je zabilježeno")) {
+                    fetchPrisustva();
+                }
             })
-            .catch(error => {
-                document.getElementById('result').innerHTML =
-                    `<p style="color:red;">❌ Greška: ${error.message}</p>`;
-            });
+            .catch(err => console.error(err));
 
-            setTimeout(() => {
-                lastResult = null;
-            }, 3000);
+            setTimeout(() => { lastResult = null; }, 3000);
         }
     }
 
+    function onScanFailure(error) {}
+
+        scanner.start(
+        { facingMode: "environment" },
+        { fps: 10, qrbox: { width: 250, height: 250 } },
+        onScanSuccess,
+        onScanFailure
+    ).then(() => {
+        document.getElementById("camera-icon").style.display = "none";
+        document.getElementById("reader").style.display = "block";
+    }).catch(err => {
+        console.error("Unable to start scanner:", err);
+    });
+
+
+    // Prisustva fetch
     function fetchPrisustva() {
         fetch("/Prisustvo/GetDanasnjaPrisustva")
-            .then(response => response.json())
+            .then(res => res.json())
             .then(data => {
-                const lista = document.getElementById('prisustva-lista');
+                const lista = document.getElementById("prisustva-lista");
                 lista.innerHTML = "";
                 data.forEach(item => {
                     const li = document.createElement("li");
-                    li.textContent = `${item.ime} ${item.prezime} - ${item.vrijeme}`;
+                    li.innerHTML = `<span>${item.ime} ${item.prezime}</span><span>${item.vrijeme}</span>`;
                     lista.appendChild(li);
                 });
             })
-            .catch(error => {
-                console.error("Greška pri učitavanju prisustava:", error);
-            });
+            .catch(err => console.error("Greška:", err));
     }
 
-    // Inicijalno učitaj već prisutne
     fetchPrisustva();
-
-    function onScanFailure(error) {
-        // You can log error here if needed
-    }
-
-    scanner.start(
-        { facingMode: "environment" },
-        {
-            fps: 10,
-            qrbox: { width: 350, height: 350 }
-        },
-        onScanSuccess,
-        onScanFailure
-    ).catch(err => {
-        console.error("Unable to start scanner:", err);
-        document.getElementById('result').innerHTML = `<p style="color: red;">❌ Greška: ${err}</p>`;
-    });
 </script>

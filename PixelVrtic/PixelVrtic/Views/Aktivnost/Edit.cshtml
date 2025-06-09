@@ -82,7 +82,7 @@
 <div class="container">
     <h1>Uredi aktivnost</h1>
 
-    <form asp-action="Edit">
+    <form asp-action="Edit" id="editForm">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="id" />
 
@@ -133,9 +133,15 @@
             <input asp-for="fotografija" />
             <span asp-validation-for="fotografija" class="text-danger"></span>
         </div>
-
-        <button type="submit" class="btn-submit">Spremi</button>
+        <button type="submit" form="editForm" class="btn-submit">Spremi</button>
     </form>
+
+    <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+        
+        <form asp-action="Delete" method="post" asp-route-id="@Model.id">
+            <button type="submit" class="btn-submit" style="background-color: #ffb3b3;">Obriši</button>
+        </form>
+    </div>
 
     <a asp-action="Index" class="back-link">⟵ Nazad na listu</a>
 </div>
