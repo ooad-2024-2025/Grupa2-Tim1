@@ -39,6 +39,10 @@ options.SignIn.RequireConfirmedAccount = true)
  .AddRoles<IdentityRole>()
  .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddSingleton<IzvjestajGeneratorService>();
+builder.Services.AddHostedService(provider => provider.GetRequiredService<IzvjestajGeneratorService>());
+
+
 
 builder.Services.AddControllersWithViews();
 

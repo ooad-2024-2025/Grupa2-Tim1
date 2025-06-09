@@ -14,10 +14,22 @@ namespace PixelVrtic.Controllers
         private readonly ApplicationDbContext _context;
 
         private readonly UserManager<Korisnik> _userManager;
-        public AdminController(ApplicationDbContext context, UserManager<Korisnik> userManager)
+        private readonly IzvjestajGeneratorService _izvjestajGeneratorService;
+
+        public AdminController(IzvjestajGeneratorService izvjestajGeneratorService,
+            ApplicationDbContext context, UserManager<Korisnik> userManager)
         {
             _context = context;
             _userManager = userManager;
+            _izvjestajGeneratorService = izvjestajGeneratorService;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PokreniRucno()
+        {
+            await _izvjestajGeneratorService.KreirajIzvjestajeZaProsliMjesec();
+            TempData["Poruka"] = "Izvještaji su uspješno generisani ručno.";
+            return RedirectToAction("Dashboard");
         }
         // GET: /Admin/Dashboard
         [Authorize(Roles = "Administrator")]

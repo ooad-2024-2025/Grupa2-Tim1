@@ -113,12 +113,13 @@
                         <a class="@(currentController == "Admin" && currentAction == "Dashboard" ? "active" : "")" asp-controller="Admin" asp-action="Dashboard">Dashboard</a>
                         <a class="@(currentController == "Roditelj" ? "active" : "")" asp-controller="Roditelj" asp-action="Index">Roditelji</a>
                         <a class="@(currentController == "Dijete" ? "active" : "")" asp-controller="Dijete" asp-action="Index">Djeca</a>
-                        <a class="@(currentController == "Vaspitac" ? "active" : "")" asp-controller="Vaspitac" asp-action="Index">Vaspitači</a>
+                        <a class="@(currentController == "Vaspitac" && currentAction == "Index"? "active" : "")" asp-controller="Vaspitac" asp-action="Index">Vaspitači</a>
                         <a class="@(currentController == "Aktivnost" ? "active" : "")" asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
-                        <a class="@(currentController == "Grupe" ? "active" : "")" asp-controller="Grupa" asp-action="Index">Grupe</a>
+                        <a class="@(currentController == "Grupa" ? "active" : "")" asp-controller="Grupa" asp-action="Index">Grupe</a>
                         <a class="@(currentController == "Obavijest" ? "active" : "")" asp-controller="Obavijest" asp-action="Choice">Obavještenja</a>
-                        <a class="@(currentController == "Prisustvo" ? "active" : "")" asp-controller="Vaspitac" asp-action="Dashboard">Prisustvo</a>
+                        <a class="@(currentController == "Vaspitac" && currentAction == "Dashboard" ? "active" : "")" asp-controller="Vaspitac" asp-action="Dashboard">Prisustvo</a>
                         <a class="@(currentController == "Admin" && currentAction == "Finansije" ? "active" : "")" asp-controller="Admin" asp-action="Finansije">Finansije</a>
+                        <a class="@(currentController == "Izvjestaj" ? "active" : "")" asp-controller="Izvjestaj" asp-action="Index">Izvještaj</a>
 
                     }
                     else if (User.IsInRole("Vaspitac"))
@@ -127,8 +128,10 @@
                         <a class="@(currentController == "Roditelj" ? "active" : "")" asp-controller="Roditelj" asp-action="Index">Roditelji</a>
                         <a class="@(currentController == "Dijete" ? "active" : "")" asp-controller="Dijete" asp-action="Index">Djeca</a>
                         <a class="@(currentController == "Aktivnost" ? "active" : "")" asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
-                        <a class="@(currentController == "Grupe" ? "active" : "")" asp-controller="Grupa" asp-action="Index">Grupe</a>
+                        <a class="@(currentController == "Grupa" ? "active" : "")" asp-controller="Grupa" asp-action="Index">Grupe</a>
                         <a class="@(currentController == "Obavijest" ? "active" : "")" asp-controller="Obavijest" asp-action="Choice">Obavještenja</a>
+                        <a class="@(currentController == "Izvjestaj" ? "active" : "")" asp-controller="Izvjestaj" asp-action="Index">Izvještaj</a>
+
                     }
                     else if (User.IsInRole("Roditelj"))
                     {

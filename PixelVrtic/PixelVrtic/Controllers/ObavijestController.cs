@@ -66,9 +66,10 @@ namespace PixelVrtic.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator, Vaspitac")]
-
         public async Task<IActionResult> Create(Obavijest obavijest)
         {
+            System.Diagnostics.Debug.WriteLine("POST metoda pozvana"); // provjera
+
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser == null)
                 return BadRequest("Nije moguće utvrditi autora.");
@@ -76,13 +77,24 @@ namespace PixelVrtic.Controllers
             obavijest.idAutora = currentUser.Id;
             obavijest.datum = DateTime.Now;
 
-            if (ModelState.IsValid)
+            ModelState.Remove("idAutora");
+
+
+            if (!ModelState.IsValid)
             {
-                _context.Add(obavijest);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                System.Diagnostics.Debug.WriteLine("ne valja"); // provjera
+                foreach (var err in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    System.Diagnostics.Debug.WriteLine(err.ErrorMessage);
+                }
+                return View(obavijest);
             }
-            return View(obavijest);
+
+            Console.WriteLine("top");
+
+            _context.Add(obavijest);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
 

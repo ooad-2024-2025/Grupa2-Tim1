@@ -144,7 +144,7 @@ namespace PixelVrtic.Controllers
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
 
-        public async Task<IActionResult> Edit(int id, [Bind("naziv,idKorisnika")] Grupa grupa)
+        public async Task<IActionResult> Edit(int id,Grupa grupa)
         {
             if (id != grupa.id)
             {

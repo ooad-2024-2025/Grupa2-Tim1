@@ -21,6 +21,7 @@ namespace PixelVrtic.Data
         public DbSet<Aktivnost> Aktivnost { get; set; }
         public DbSet<FinansijskaEvidencija> FinansijskaEvidencija { get; set; }
 
+        public DbSet<Izvjestaj> Izvjestaj { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -49,6 +50,9 @@ namespace PixelVrtic.Data
                 .HasForeignKey(d => d.roditeljId)
                 .OnDelete(DeleteBehavior.Restrict);
             
+            builder.Entity<Izvjestaj>()
+                .HasIndex(i => new { i.DijeteId, i.Period })
+                .IsUnique(); // Sprječava duplikate za isto dijete i mjesec
         }
     }
 }

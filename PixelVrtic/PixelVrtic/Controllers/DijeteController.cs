@@ -126,7 +126,7 @@ namespace PixelVrtic.Controllers
                 return NotFound();
             }
             ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime", dijete.roditeljId);
-            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "id", dijete.grupaId);
+            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "naziv", dijete.grupaId);
             return View(dijete);
         }
 

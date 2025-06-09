@@ -61,7 +61,7 @@
 
 <div class="container">
     <h1>Slanje obavještenja</h1>
-    <form asp-action="Create">
+    <form asp-controller="Obavijest" asp-action="Create" method="post">
         <div class="form-group">
             <label asp-for="naslov">Naslov</label>
             <input asp-for="naslov" />

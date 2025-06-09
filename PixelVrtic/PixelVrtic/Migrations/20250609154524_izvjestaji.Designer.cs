@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PixelVrtic.Data;
 
@@ -11,9 +12,11 @@ using PixelVrtic.Data;
 namespace PixelVrtic.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250609154524_izvjestaji")]
+    partial class izvjestaji
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -325,14 +328,14 @@ namespace PixelVrtic.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BrojDanaPrisustva")
-                        .IsRequired()
+                    b.Property<int>("BrojDanaPrisustva")
                         .HasColumnType("int");
 
                     b.Property<int>("DijeteId")
                         .HasColumnType("int");
 
                     b.Property<string>("KomentarVaspitaca")
+                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
