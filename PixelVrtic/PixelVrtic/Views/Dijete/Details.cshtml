@@ -1,72 +1,105 @@
 ﻿@model PixelVrtic.Models.Dijete
-
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalji o djetetu";
 }
 
-<h1>Details</h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<div>
-    <h4>Dijete</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.prezime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.prezime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datumRodjenja)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datumRodjenja)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.mjestoRodenja)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.mjestoRodenja)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JMBG)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.JMBG)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.grupa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.grupa.id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.zdravstveneNapomene)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.zdravstveneNapomene)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fotografija)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fotografija)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Korisnik)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Korisnik.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<style>
+    body {
+        background-color: #e0f7fa;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+        max-width: 700px;
+        margin: 3rem auto;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-title {
+        font-weight: bold;
+        color: #3399cc;
+        margin-bottom: 2rem;
+    }
+
+    .data-label {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #333;
+    }
+
+    .data-value {
+        margin-bottom: 1rem;
+        padding: 0.5rem 0.75rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .btn-secondary {
+        border-radius: 20px;
+        padding: 0.5rem 1.5rem;
+    }
+</style>
+
+<div class="form-container">
+    <h2 class="form-title">DETALJI O DJETETU</h2>
+
+    <div class="mb-3">
+        <div class="data-label">Ime</div>
+        <div class="data-value">@Model.ime</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Prezime</div>
+        <div class="data-value">@Model.prezime</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Datum rođenja</div>
+        <div class="data-value">@Model.datumRodjenja.ToString("dd.MM.yyyy")</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Mjesto rođenja</div>
+        <div class="data-value">@Model.mjestoRodenja</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">JMBG</div>
+        <div class="data-value">@Model.JMBG</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Grupa</div>
+        <div class="data-value">@Model.grupa?.naziv</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Zdravstvene napomene</div>
+        <div class="data-value">@Model.zdravstveneNapomene</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Fotografija</div>
+        <div class="data-value">@Model.fotografija</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="data-label">Roditelj ID</div>
+        <div class="data-value">@Model.Korisnik?.ime @Model.Korisnik?.prezime</div>
+    </div>
+
+    <div class="text-end">
+        <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-primary me-2">Uredi</a>
+
+        @if (!User.IsInRole("Roditelj"))
+        {
+            <a asp-action="Index" class="btn btn-secondary">Nazad</a>
+        }
+    </div>
+
 </div>

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PixelVrtic.Data;
 using PixelVrtic.Models;
 
@@ -70,6 +71,84 @@ public class VaspitacController : Controller
 
         return View();
     }
+
+    public async Task<IActionResult> Details(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+            return NotFound();
+
+        var korisnik = await _userManager.FindByIdAsync(id);
+        if (korisnik == null)
+            return NotFound();
+
+        return View(korisnik); 
+    }
+
+
+    // GET: Roditelji/Edit/5
+
+    public async Task<IActionResult> Edit(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+            return NotFound();
+
+        var currentUserId = _userManager.GetUserId(User);
+        if (currentUserId != id && !User.IsInRole("Administrator"))
+        {
+            return Forbid(); // ili RedirectToAction("AccessDenied", "Account");
+        }
+
+        var korisnik = await _userManager.FindByIdAsync(id);
+        if (korisnik == null)
+            return NotFound();
+
+        return View(korisnik);
+    }
+
+
+
+    // POST: Roditelji/Edit/5
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(string id, Korisnik korisnik)
+    {
+        if (id != korisnik.Id)
+            return NotFound();
+
+        var currentUserId = _userManager.GetUserId(User);
+        if (currentUserId != id && !User.IsInRole("Administrator"))
+        {
+            return Forbid(); // ili RedirectToAction("AccessDenied", "Account");
+        }
+
+        if (!ModelState.IsValid)
+            return View(korisnik);
+
+        var postojeci = await _userManager.FindByIdAsync(id);
+        if (postojeci == null)
+            return NotFound();
+
+        // Ažuriranje dozvoljenih polja
+        postojeci.ime = korisnik.ime;
+        postojeci.prezime = korisnik.prezime;
+        postojeci.datumRodjenja = korisnik.datumRodjenja;
+        postojeci.grad = korisnik.grad;
+        postojeci.brojTelefona = korisnik.brojTelefona;
+        postojeci.Email = korisnik.Email;
+        postojeci.UserName = korisnik.Email; // Ako koristiš email za login
+
+        try
+        {
+            await _userManager.UpdateAsync(postojeci);
+            return RedirectToAction(nameof(Details), "Vaspitac", new { id = korisnik.Id });
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            ModelState.AddModelError("", "Dogodila se greška pri ažuriranju. Molimo pokušajte ponovo.");
+            return View(korisnik);
+        }
+    }
+
 
 
 }

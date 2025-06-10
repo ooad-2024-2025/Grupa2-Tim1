@@ -1,0 +1,16 @@
+﻿@model PixelVrtic.Views.Roditelj.DashboardModel
+@{
+    ViewData["Title"] = "QR Kod";
+}
+
+<div class="d-flex flex-column align-items-center justify-content-center" style="background-color: #fde9ef; height: 100vh;">
+    <div class="bg-white rounded p-4 text-center shadow" style="width: 280px;">
+        <img src="@Url.Content($"~/qrcodes/{ViewBag.QRFileName}")" alt="QR Kod" class="img-fluid" />
+        <p class="mt-2 text-muted" style="font-size: 0.9rem;">Kod generisan @ViewBag.GeneratedDate</p>
+    </div>
+
+    <a asp-controller="Roditelj" asp-action="DownloadQRCode" class="btn mt-4" style="background-color: #a5dbc6; color: black; border-radius: 30px; width: 200px;">
+        Preuzmi kod
+    </a>
+</div>
+

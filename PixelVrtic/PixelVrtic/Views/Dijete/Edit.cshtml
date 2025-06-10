@@ -143,6 +143,9 @@
 
         <button type="submit" class="btn-submit">Spremi</button>
     </form>
+    <form asp-action="Delete" asp-route-id="@Model.id" method="post" style="margin-top: 20px; text-align: center;">
+        <button type="submit" class="btn-submit" style="background-color: #ffb3b3;">Obriši</button>
+    </form>
 
     <a asp-action="Index" class="back-link">⟵ Nazad na listu</a>
 </div>

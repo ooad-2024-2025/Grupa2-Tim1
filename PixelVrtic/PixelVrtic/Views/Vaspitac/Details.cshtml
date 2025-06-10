@@ -1,6 +1,25 @@
 ﻿@model PixelVrtic.Models.Korisnik
+
 @{
-    ViewData["Title"] = "Detalji o roditelju";
+    ViewData["Title"] = "Detalji o korisniku";
+    string backAction = ""; // default action
+    string backController = "";
+
+    if (User.IsInRole("Roditelj"))
+    {
+        backController = "Roditelj";
+        backAction = "Dashboard";
+    }
+    else if (User.IsInRole("Admin"))
+    {
+        backController = "Admin";
+        backAction = "Dashboard";
+    }
+    else if (User.IsInRole("Vaspitac"))
+    {
+        backController = "Vaspitac";
+        backAction = "Dashboard";
+    }
 }
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -46,7 +65,7 @@
 </style>
 
 <div class="form-container">
-    <h2 class="form-title">DETALJI O RODITELJU</h2>
+    <h2 class="form-title">DETALJI O KORISNIKU</h2>
 
     <div class="mb-3">
         <div class="data-label">Ime</div>
@@ -79,6 +98,7 @@
     </div>
 
     <div class="text-end">
-        <a asp-action="Index" class="btn btn-secondary">NAZAD</a>
+        <a asp-action="Edit" asp-controller="Vaspitac" asp-route-id="@Model.Id" class="btn btn-primary me-2">UREDI</a>
+        <a asp-action="@backAction" asp-controller="@backController" class="btn btn-secondary">NAZAD</a>
     </div>
 </div>

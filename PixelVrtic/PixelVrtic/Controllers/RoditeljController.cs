@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using IronBarCode;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +18,18 @@ namespace PixelVrtic.Controllers
 
         private readonly ApplicationDbContext _context;
 
-        public RoditeljController(ApplicationDbContext context, UserManager<Korisnik> userManager, RoleManager<IdentityRole> roleManager)
+        public RoditeljController(
+    ApplicationDbContext context,
+    UserManager<Korisnik> userManager,
+    RoleManager<IdentityRole> roleManager,
+    IWebHostEnvironment env)
         {
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
+            _env = env;
         }
+
         [Authorize(Roles = "Administrator, Vaspitac")]
         public IActionResult Index()
         {
@@ -174,6 +181,72 @@ namespace PixelVrtic.Controllers
 
             return View(roditelj);
         }
+
+        private readonly IWebHostEnvironment _env;
+
+        [HttpPost]
+        public IActionResult GenerateQRCode(string qrText)
+        {
+            if (string.IsNullOrWhiteSpace(qrText))
+            {
+                TempData["QRCodeError"] = "Unesite vrijednost za QR kod.";
+                return RedirectToAction("Dashboard");
+            }
+
+            var barcode = QRCodeWriter.CreateQrCode(qrText, 300);
+            barcode.AddBarcodeValueTextBelowBarcode();
+            barcode.SetMargins(10);
+            //barcode.ChangeBarCodeColor(Color.BlueViolet); // Optional
+
+            byte[] imageBytes = barcode.ToPngBinaryData();
+            string base64Image = Convert.ToBase64String(imageBytes);
+            string imageDataUrl = $"data:image/png;base64,{base64Image}";
+
+            TempData["QRCodeBase64"] = imageDataUrl;
+            return RedirectToAction("Dashboard");
+        }
+
+
+        public async Task<IActionResult> Dashboard()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null || user.uloga != Uloga.roditelj)
+                return Unauthorized();
+
+            string qrFileName = $"{user.Id}_qrcode.png";
+            string qrPath = Path.Combine(_env.WebRootPath, "qrcodes", qrFileName);
+
+            if (!System.IO.File.Exists(qrPath))
+            {
+                // Generate and save QR code
+                var barcode = QRCodeWriter.CreateQrCode(user.Id, 300);
+                barcode.SetMargins(10);
+                System.IO.File.WriteAllBytes(qrPath, barcode.ToPngBinaryData());
+            }
+
+            ViewBag.QRFileName = qrFileName;
+            ViewBag.GeneratedDate = DateTime.Now.ToString("d.M.yyyy.");
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DownloadQRCode()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null || user.uloga != Uloga.roditelj)
+                return Unauthorized();
+
+            string qrFileName = $"{user.Id}_qrcode.png";
+            string qrPath = Path.Combine(_env.WebRootPath, "qrcodes", qrFileName);
+
+            if (!System.IO.File.Exists(qrPath))
+                return NotFound();
+
+            byte[] fileBytes = await System.IO.File.ReadAllBytesAsync(qrPath);
+            return File(fileBytes, "image/png", "QRCode.png");
+        }
+
+
 
     }
 }

@@ -56,7 +56,7 @@ namespace PixelVrtic.Controllers
 
 
         // GET: Dijete/Details/5
-        [Authorize(Roles = "Administrator, Vaspitac")]
+        [Authorize(Roles = "Administrator, Vaspitac, Roditelj")]
 
         public async Task<IActionResult> Details(int? id)
         {
@@ -135,6 +135,7 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,ime,prezime,datumRodjenja,mjestoRodenja,JMBG,grupaId,zdravstveneNapomene,fotografija,roditeljId")] Dijete dijete)
         {
             if (id != dijete.id)
@@ -210,5 +211,22 @@ namespace PixelVrtic.Controllers
         {
             return _context.Dijete.Any(e => e.id == id);
         }
+
+        [Authorize(Roles = "Roditelj")]
+        public async Task<IActionResult> MojeDijete()
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var dijete = await _context.Dijete
+                .Include(d => d.Korisnik)
+                .Include(d => d.grupa)
+                .FirstOrDefaultAsync(d => d.roditeljId == userId);
+
+            if (dijete == null)
+                return NotFound();
+
+            return View("Details", dijete);
+        }
+
     }
 }

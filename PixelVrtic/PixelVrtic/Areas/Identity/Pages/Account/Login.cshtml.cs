@@ -136,7 +136,7 @@ namespace PixelVrtic.Areas.Identity.Pages.Account
                     }
                     else if (await _signInManager.UserManager.IsInRoleAsync(user, "Roditelj"))
                     {
-                        return RedirectToAction("Dashboard", "Admin");
+                        return RedirectToAction("Dashboard", "Roditelj");
                     }
                     else if (await _signInManager.UserManager.IsInRoleAsync(user, "Vaspitac"))
                     {

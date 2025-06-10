@@ -41,10 +41,37 @@
                     }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px; /* malo veći razmak */
             font-weight: bold;
-            font-size: 24px;
-            margin-bottom: 1rem;
+            font-size: 18px; /* usklađeno s ostalim tekstovima */
+            margin-bottom: 1.8rem;
+            padding-left: 10px; /* poravnanje s ostatkom menija */
         }
+
+        .logo-text {
+            line-height: 1;
+        }
+
+
+
+        .logo-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: #3399cc;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            .logo-circle:hover {
+                background-color: #287aa7;
+            }
 
         @@media (max-width: 768px) {
             .sidebar {
@@ -107,7 +134,13 @@
                         var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
                         var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
                     }
-                    <div class="logo">Pixel</div>
+                    <div class="logo">
+                        <div class="logo-text">Pixel</div>
+                        @{
+                            var userId = UserManager.GetUserId(User);
+                        }
+                        <a class="logo-circle" asp-controller="Vaspitac" asp-action="Details" asp-route-id="@userId" title="Detalji">i</a>
+                    </div>
                     @if (User.IsInRole("Administrator"))
                     {
                         <a class="@(currentController == "Admin" && currentAction == "Dashboard" ? "active" : "")" asp-controller="Admin" asp-action="Dashboard">Dashboard</a>
@@ -135,10 +168,13 @@
                     }
                     else if (User.IsInRole("Roditelj"))
                     {
-                        <a asp-controller="Dijete" asp-action="MojeDijete">Moje dijete</a>
-                        <a asp-controller="Aktivnost" asp-action="Pregled">Aktivnosti</a>
-                        <a asp-controller="Obavijest" asp-action="Index">Obavještenja</a>
-                        <a asp-controller="Finansije" asp-action="Pregled">Finansije</a>
+                        <a class="@(currentController == "Roditelj" && currentAction == "Dashboard" ? "active" : "")" asp-controller="Roditelj" asp-action="Dashboard">Dashboard</a>
+                        <a class="@(currentController == "Dijete" && currentAction == "MojeDijete" ? "active" : "")" asp-controller="Dijete" asp-action="MojeDijete">Djeca</a>
+                        <a class="@(currentController == "Izvjestaj" ? "active" : "")" asp-controller="Izvjestaj" asp-action="Index">Izvještaj</a>
+                        <a class="@(currentController == "Aktivnost" ? "active" : "")" asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
+                        <a class="@(currentController == "Roditelj" && currentAction == "Finansije" ? "active" : "")" asp-controller="Roditelj" asp-action="Finansije">Finansije</a>
+                        <a class="@(currentController == "Obavijest" ? "active" : "")" asp-controller="Obavijest" asp-action="Index">Obavještenja</a>
+                        <a class="@(currentController == "Roditelj" && currentAction == "Evidencija odsutnosti" ? "active" : "")" asp-controller="Roditelj" asp-action="Index">Evidencija odsutnosti</a>
                     }
 
                     <!-- Logout shown to all roles -->
