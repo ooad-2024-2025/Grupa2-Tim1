@@ -57,21 +57,25 @@
 
 
         .logo-circle {
-            display: flex;
-            align-items: center;
+            display: inline-flex;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background-color: #3399cc;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            vertical-align: middle;
+            background-color: transparent;
             color: white;
-            font-weight: bold;
             text-decoration: none;
         }
 
             .logo-circle:hover {
                 background-color: #287aa7;
             }
+
+
+
 
         @@media (max-width: 768px) {
             .sidebar {
@@ -128,7 +132,6 @@
     {
         <div class="container-fluid">
             <div class="row">
-                <!-- Sidebar -->
                 <div class="col-12 col-md-3 col-lg-2 sidebar">
                     @{
                         var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
@@ -139,7 +142,7 @@
                         @{
                             var userId = UserManager.GetUserId(User);
                         }
-                        <a class="logo-circle" asp-controller="Vaspitac" asp-action="Details" asp-route-id="@userId" title="Detalji">i</a>
+                        <a class="logo-circle" asp-controller="Vaspitac" asp-action="Details" asp-route-id="@userId" title="Detalji">👤</a>
                     </div>
                     @if (User.IsInRole("Administrator"))
                     {
@@ -174,7 +177,6 @@
                         <a class="@(currentController == "Aktivnost" ? "active" : "")" asp-controller="Aktivnost" asp-action="Index">Aktivnosti</a>
                         <a class="@(currentController == "Roditelj" && currentAction == "Finansije" ? "active" : "")" asp-controller="Roditelj" asp-action="Finansije">Finansije</a>
                         <a class="@(currentController == "Obavijest" ? "active" : "")" asp-controller="Obavijest" asp-action="Index">Obavještenja</a>
-                        <a class="@(currentController == "Roditelj" && currentAction == "Evidencija odsutnosti" ? "active" : "")" asp-controller="Roditelj" asp-action="Index">Evidencija odsutnosti</a>
                     }
 
                     <!-- Logout shown to all roles -->
