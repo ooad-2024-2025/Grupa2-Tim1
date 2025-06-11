@@ -18,14 +18,12 @@ namespace PixelVrtic.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<Korisnik> _userManager;
 
-
         public DijeteController(ApplicationDbContext context, UserManager<Korisnik> userManager)
         {
             _context = context;
             _userManager = userManager;
         }
 
-        // GET: Dijete
         // GET: Dijete
         [Authorize(Roles = "Administrator, Vaspitac")]
         public async Task<IActionResult> Index(int? idGrupe, string search)
@@ -47,68 +45,54 @@ namespace PixelVrtic.Controllers
                     d.prezime.ToLower().Contains(search.ToLower()) ||
                     d.Korisnik.ime.ToLower().Contains(search.ToLower()) ||
                     d.Korisnik.prezime.ToLower().Contains(search.ToLower()));
-
             }
 
             var dijeca = await dijeteQuery.ToListAsync();
             return View(dijeca);
         }
 
-
         // GET: Dijete/Details/5
         [Authorize(Roles = "Administrator, Vaspitac, Roditelj")]
-
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var dijete = await _context.Dijete
                 .Include(d => d.Korisnik)
                 .Include(d => d.grupa)
                 .FirstOrDefaultAsync(m => m.id == id);
+
             if (dijete == null)
-            {
                 return NotFound();
-            }
 
             return View(dijete);
         }
 
         // GET: Dijete/Create
+        [Authorize(Roles = "Administrator, Vaspitac")]
         public IActionResult Create()
         {
-
-            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime");
+            UcitajRoditeljeUViewData();
             ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "naziv");
             return View();
         }
 
         // POST: Dijete/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Create([Bind("id,ime,prezime,datumRodjenja,mjestoRodenja,JMBG,grupaId,zdravstveneNapomene,fotografija,roditeljId")] Dijete dijete)
         {
-            foreach (var modelState in ModelState)
-            {
-                foreach (var error in modelState.Value.Errors)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Key: {modelState.Key}, Error: {error.ErrorMessage}");
-                }
-            }
             if (ModelState.IsValid)
             {
                 _context.Add(dijete);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime", dijete.roditeljId);
+            UcitajRoditeljeUViewData();
             ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "naziv", dijete.grupaId);
-
             return View(dijete);
         }
 
@@ -116,31 +100,44 @@ namespace PixelVrtic.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var dijete = await _context.Dijete.FindAsync(id);
             if (dijete == null)
-            {
                 return NotFound();
+
+            // Provjera dozvole
+            if (!User.IsInRole("Administrator") && !User.IsInRole("Vaspitac"))
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                if (dijete.roditeljId != userId)
+                    return Forbid(); // Ili RedirectToAction("AccessDenied", "Account");
             }
-            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime", dijete.roditeljId);
+
+            UcitajRoditeljeUViewData(dijete.roditeljId);
             ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "naziv", dijete.grupaId);
             return View(dijete);
         }
 
+
         // POST: Dijete/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public async Task<IActionResult> Edit(int id, [Bind("id,ime,prezime,datumRodjenja,mjestoRodenja,JMBG,grupaId,zdravstveneNapomene,fotografija,roditeljId")] Dijete dijete)
         {
             if (id != dijete.id)
-            {
                 return NotFound();
+
+            // Učitaj originalno dijete iz baze radi provjere vlasništva
+            var originalDijete = await _context.Dijete.AsNoTracking().FirstOrDefaultAsync(d => d.id == id);
+            if (originalDijete == null)
+                return NotFound();
+
+            if (!User.IsInRole("Administrator") && !User.IsInRole("Vaspitac"))
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                if (originalDijete.roditeljId != userId)
+                    return Forbid();
             }
 
             if (ModelState.IsValid)
@@ -153,39 +150,33 @@ namespace PixelVrtic.Controllers
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!DijeteExists(dijete.id))
-                    {
                         return NotFound();
-                    }
                     else
-                    {
                         throw;
-                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["roditeljId"] = new SelectList(_userManager.Users, "Id", "ime", dijete?.roditeljId);
-            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "id", dijete?.grupaId);
+
+            UcitajRoditeljeUViewData(dijete.roditeljId);
+            ViewData["grupaId"] = new SelectList(_context.Grupa, "id", "naziv", dijete.grupaId);
             return View(dijete);
         }
 
+
         // GET: Dijete/Delete/5
         [Authorize(Roles = "Administrator")]
-
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var dijete = await _context.Dijete
                 .Include(d => d.Korisnik)
                 .Include(d => d.grupa)
                 .FirstOrDefaultAsync(m => m.id == id);
+
             if (dijete == null)
-            {
                 return NotFound();
-            }
 
             return View(dijete);
         }
@@ -194,25 +185,21 @@ namespace PixelVrtic.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
-
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var dijete = await _context.Dijete.FindAsync(id);
             if (dijete != null)
-            {
                 _context.Dijete.Remove(dijete);
-            }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        [Authorize(Roles = "Administrator, Vaspitac")]
         private bool DijeteExists(int id)
         {
             return _context.Dijete.Any(e => e.id == id);
         }
 
-        [Authorize(Roles = "Roditelj")]
         public async Task<IActionResult> MojeDijete()
         {
             var userId = _userManager.GetUserId(User);
@@ -226,6 +213,32 @@ namespace PixelVrtic.Controllers
                 return NotFound();
 
             return View("Details", dijete);
+        }
+        [Authorize(Roles = "Administrator, Vaspitac")]
+        private void UcitajRoditeljeUViewData(string selectedRoditeljId = null)
+        {
+            var roditelji = _context.Korisnik
+                .Where(k => k.uloga != null && (int)k.uloga == 2)
+                .Select(k => new
+                {
+                    k.Id,
+                    punoIme = (k.ime ?? "") + " " + (k.prezime ?? "")
+                })
+                .ToList()
+                .Select(k => new SelectListItem
+                {
+                    Value = k.Id,
+                    Text = k.punoIme,
+                    Selected = (k.Id == selectedRoditeljId)
+                })
+                .ToList();
+
+            if (roditelji.Count == 0)
+            {
+                System.Diagnostics.Debug.WriteLine("Nema roditelja s ulogom == 2");
+            }
+
+            ViewData["roditeljId"] = roditelji;
         }
 
     }

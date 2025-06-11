@@ -76,6 +76,8 @@ namespace PixelVrtic.Controllers
         // Akcija za spremanje komentara (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> DodajKomentar(int id, string komentar)
         {
             if (string.IsNullOrWhiteSpace(komentar))
@@ -92,7 +94,7 @@ namespace PixelVrtic.Controllers
             await _context.SaveChangesAsync();
 
             TempData["Uspjeh"] = "Komentar je uspješno spremljen.";
-            return RedirectToAction(nameof(Details));
+            return RedirectToAction(nameof(Index));
         }
     }
 }

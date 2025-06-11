@@ -77,26 +77,12 @@ public class VaspitacController : Controller
         if (string.IsNullOrEmpty(id))
             return NotFound();
 
-        var korisnik = await _userManager.FindByIdAsync(id);
-        if (korisnik == null)
-            return NotFound();
+        // Get current user's ID
+        var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-        return View(korisnik); 
-    }
-
-
-    // GET: Roditelji/Edit/5
-
-    public async Task<IActionResult> Edit(string id)
-    {
-        if (string.IsNullOrEmpty(id))
-            return NotFound();
-
-        var currentUserId = _userManager.GetUserId(User);
-        if (currentUserId != id && !User.IsInRole("Administrator"))
-        {
-            return Forbid(); // ili RedirectToAction("AccessDenied", "Account");
-        }
+        // If not admin, enforce access to self only
+        if (!User.IsInRole("Administrator") && id != currentUserId)
+            return Forbid();
 
         var korisnik = await _userManager.FindByIdAsync(id);
         if (korisnik == null)
@@ -107,9 +93,28 @@ public class VaspitacController : Controller
 
 
 
+    // GET: Roditelji/Edit/5
+    [Authorize] // Allow all authenticated users
+    public async Task<IActionResult> Edit(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+            return NotFound();
+
+        var currentUserId = _userManager.GetUserId(User);
+        if (currentUserId != id && !User.IsInRole("Administrator"))
+            return Forbid();
+
+        var korisnik = await _userManager.FindByIdAsync(id);
+        if (korisnik == null)
+            return NotFound();
+
+        return View(korisnik);
+    }
+
     // POST: Roditelji/Edit/5
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize] // Allow all authenticated users
     public async Task<IActionResult> Edit(string id, Korisnik korisnik)
     {
         if (id != korisnik.Id)
@@ -117,9 +122,7 @@ public class VaspitacController : Controller
 
         var currentUserId = _userManager.GetUserId(User);
         if (currentUserId != id && !User.IsInRole("Administrator"))
-        {
-            return Forbid(); // ili RedirectToAction("AccessDenied", "Account");
-        }
+            return Forbid();
 
         if (!ModelState.IsValid)
             return View(korisnik);
@@ -128,14 +131,14 @@ public class VaspitacController : Controller
         if (postojeci == null)
             return NotFound();
 
-        // Ažuriranje dozvoljenih polja
+        // Update allowed fields
         postojeci.ime = korisnik.ime;
         postojeci.prezime = korisnik.prezime;
         postojeci.datumRodjenja = korisnik.datumRodjenja;
         postojeci.grad = korisnik.grad;
         postojeci.brojTelefona = korisnik.brojTelefona;
         postojeci.Email = korisnik.Email;
-        postojeci.UserName = korisnik.Email; // Ako koristiš email za login
+        postojeci.UserName = korisnik.Email;
 
         try
         {
@@ -148,6 +151,7 @@ public class VaspitacController : Controller
             return View(korisnik);
         }
     }
+
 
 
 

@@ -202,8 +202,6 @@ namespace PixelVrtic.Controllers
         }
 
         [Authorize(Roles = "Administrator, Vaspitac")]
-
-
         public IActionResult Choice()
         {
             return View();

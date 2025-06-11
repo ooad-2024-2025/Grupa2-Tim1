@@ -22,6 +22,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Prisustvo
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Prisustvo.Include(p => p.Dijete);
@@ -29,6 +31,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Prisustvo/Details/5
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -48,6 +52,8 @@ namespace PixelVrtic.Controllers
         }
 
         // GET: Prisustvo/Create
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public IActionResult Create()
         {
             ViewData["dijeteId"] = new SelectList(_context.Dijete, "id", "id");
@@ -59,6 +65,8 @@ namespace PixelVrtic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> Create([Bind("id,datum,dijeteId,prisutan,razlogOdsutnosti")] Prisustvo prisustvo)
         {
             if (ModelState.IsValid)
@@ -178,6 +186,8 @@ namespace PixelVrtic.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> CreateFromQr()
         {
             using var reader = new StreamReader(Request.Body);
@@ -199,7 +209,6 @@ namespace PixelVrtic.Controllers
             var danas = DateTime.Today;
             var sutra = danas.AddDays(1);
 
-            // Provjera postoji li već prisustvo za ovo dijete danas
             bool postojiPrisustvo = await _context.Prisustvo
                 .AnyAsync(p => p.dijeteId == dijete.id && p.datum >= danas && p.datum < sutra);
 
@@ -224,6 +233,8 @@ namespace PixelVrtic.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Administrator, Vaspitac")]
+
         public async Task<IActionResult> GetDanasnjaPrisustva()
         {
             var danas = DateTime.Today;

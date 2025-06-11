@@ -25,6 +25,17 @@ namespace PixelVrtic.Controllers
             _context = context;
             _userManager = userManager;
         }
+
+        private void PostaviVaspitaceViewData(object selectedId = null)
+        {
+            // Dohvati korisnike koji imaju ulogu s id=2
+            var roditelji = _context.Korisnik
+                .Where(k => k.uloga != null && (int)k.uloga == 1)
+                .ToList();
+
+
+            ViewData["idKorisnika"] = new SelectList(roditelji, "Id", "ime", selectedId);
+        }
         // GET: Aktivnost
 
         public IActionResult Index(int? year, int? month)
@@ -39,7 +50,7 @@ namespace PixelVrtic.Controllers
             .ToList();
 
             var user = HttpContext.User;
-            ViewBag.IsAuthorizedUser = user.IsInRole("Administrator") || user.IsInRole("Vaspitac");
+            ViewBag.IsAuthorizedUser = user.IsInRole("Administrator") || user.IsInRole("Vaspitac") || user.IsInRole("Roditelj");
             ViewBag.Year = selectedYear;
             ViewBag.Month = selectedMonth;
 
@@ -74,7 +85,7 @@ namespace PixelVrtic.Controllers
         {
             var users = _userManager.Users.ToList(); // Materialize to prevent issues
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv");
-            ViewData["idKorisnika"] = new SelectList(users, "Id", "ime");
+            PostaviVaspitaceViewData();
             ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
 
             var model = new Aktivnost();
@@ -116,7 +127,7 @@ namespace PixelVrtic.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
-            ViewData["idKorisnika"] = new SelectList(_userManager.Users.ToList(), "Id", "ime", aktivnost.idKorisnika);
+            PostaviVaspitaceViewData(aktivnost.idKorisnika);
             return View(aktivnost);
         }
 
@@ -137,7 +148,7 @@ namespace PixelVrtic.Controllers
                 return NotFound();
             }
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv");
-            ViewData["idKorisnika"] = new SelectList(users, "Id", "ime");
+            PostaviVaspitaceViewData(); 
             ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
             return View(aktivnost);
         }
@@ -177,7 +188,7 @@ namespace PixelVrtic.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
-            ViewData["idKorisnika"] = new SelectList(_userManager.Users.ToList(), "Id", "ime", aktivnost.idKorisnika);
+            PostaviVaspitaceViewData(aktivnost.idKorisnika);
             return View(aktivnost);
         }
 
@@ -202,7 +213,7 @@ namespace PixelVrtic.Controllers
             }
 
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv");
-            ViewData["idKorisnika"] = new SelectList(users, "Id", "ime");
+            PostaviVaspitaceViewData();
             ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
 
             return View(aktivnost);

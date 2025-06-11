@@ -2,7 +2,6 @@
 
 <div class="container">
     <div class="search-add-bar">
-        <!--    <input type="text" placeholder="Pretraži" class="search-input" />-->
         <a href="/Vaspitac/Create" class="add-button">+ Dodaj vaspitača</a>
     </div>
 
@@ -15,6 +14,7 @@
 
         @foreach (var vaspitac in Model)
         {
+            <a href="@Url.Action("Details", "Vaspitac", new { id = vaspitac.Id })" class="card-link">
             <div class="card">
                 <div class="avatar">
                     <img src="~/images/@vaspitac.fotografija" alt="Slika djeteta" width="100" height="100" />
@@ -31,6 +31,7 @@
                     <button class="icon-btn">📧</button>
                 </div>
             </div>
+            </a>
         }
     </div>
 
@@ -43,6 +44,16 @@
 </div>
 
 <style>
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .card-link:hover .card {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            transition: 0.2s ease;
+        }
     .container {
         padding: 2rem;
         background-color: #fde9f0;

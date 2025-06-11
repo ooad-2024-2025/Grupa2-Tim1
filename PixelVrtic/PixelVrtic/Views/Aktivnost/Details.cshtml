@@ -1,66 +1,157 @@
 ﻿@model PixelVrtic.Models.Aktivnost
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalji aktivnosti";
 }
 
-<h1>Details</h1>
+<div class="page-container">
+    <h1 class="details-title">Detalji aktivnosti</h1>
 
-<div>
-    <h4>Aktivnost</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nazivAktivnosti)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.nazivAktivnosti)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.tipAktivnosti)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.tipAktivnosti)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datumPocetka)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datumPocetka)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datumZavrsetka)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datumZavrsetka)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.opis)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.opis)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Grupa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Grupa.id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Korisnik)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Korisnik.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fotografija)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fotografija)
-        </dd>
-    </dl>
+    <div class="details-card">
+        <dl class="details-list">
+            <dt>Naziv aktivnosti:</dt>
+            <dd>@Model.nazivAktivnosti</dd>
+
+            <dt>Tip aktivnosti:</dt>
+            <dd>@Model.tipAktivnosti</dd>
+
+            <dt>Datum početka:</dt>
+            <dd>@Model.datumPocetka.ToString("dd.MM.yyyy HH:mm")</dd>
+
+            <dt>Datum završetka:</dt>
+            <dd>@(Model.datumZavrsetka.ToString("dd.MM.yyyy HH:mm") ?? "-")</dd>
+
+            <dt>Opis:</dt>
+            <dd>@(String.IsNullOrWhiteSpace(Model.opis) ? "-" : Model.opis)</dd>
+
+            <dt>Grupa:</dt>
+            <dd>@(Model.Grupa?.naziv ?? "Nije dodijeljeno")</dd>
+
+            <dt>Korisnik:</dt>
+            <dd>@(Model.Korisnik?.ime ?? "Nije dodijeljeno")</dd>
+        </dl>
+    </div>
+
+    <div class="details-actions">
+        <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-primary">Uredi</a>
+        <a asp-action="Index" class="btn btn-secondary">Nazad na listu</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<style>
+    /* Center page container vertically and horizontally */
+    .page-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        background-color: #f0f8ff; /* very light blue background for subtle contrast */
+    }
+
+    .details-title {
+        color: #7ec8e3; /* baby blue */
+        font-weight: 700;
+        margin-bottom: 24px;
+        font-size: 2rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+    }
+
+    .details-card {
+        background-color: #ffffff; /* white card */
+        border-radius: 16px;
+        padding: 24px 32px;
+        box-shadow: 0 4px 10px rgba(126, 200, 227, 0.3); /* baby blue shadow */
+        max-width: 600px;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .details-list {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 12px 24px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        font-size: 1.1rem;
+    }
+
+        .details-list dt {
+            font-weight: 700;
+            color: #7ec8e3; /* baby blue */
+            text-align: right;
+            padding-right: 8px;
+        }
+
+        .details-list dd {
+            margin: 0;
+            padding-left: 8px;
+            color: #555;
+            word-wrap: break-word;
+        }
+
+    .details-actions {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .btn {
+        padding: 10px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        user-select: none;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+        display: inline-block;
+        border: none;
+    }
+
+    .btn-primary {
+        background-color: #7ec8e3; /* baby blue */
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: #7ec8e3; /* darker baby blue */
+        }
+
+    .btn-secondary {
+        background-color: #f5f5f5;
+        color: #555;
+        border: 1px solid #ddd;
+    }
+
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #7ec8e3; /* baby blue, same as your background */
+        height: 100%;
+    }
+
+    .sidebar {
+        background-color: white; /* or whatever your sidebar background is */
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .main-content {
+        background-color: #7ec8e3; /* baby blue */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Also check if there is any border or box-shadow causing pink */
+
+</style>

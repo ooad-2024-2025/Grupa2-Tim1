@@ -246,6 +246,21 @@ namespace PixelVrtic.Controllers
             return File(fileBytes, "image/png", "QRCode.png");
         }
 
+        [Authorize(Roles = "Roditelj")]
+        public async Task<IActionResult> Finansije()
+        {
+            var roditelj = await _userManager.GetUserAsync(User);
+            if (roditelj == null || roditelj.uloga != Uloga.roditelj)
+                return Unauthorized();
+
+            var finansije = await _context.FinansijskaEvidencija
+                .Where(f => f.roditeljId == roditelj.Id)
+                .OrderByDescending(f => f.mjesec)
+                .ToListAsync();
+
+            return View(finansije);
+        }
+
 
 
     }

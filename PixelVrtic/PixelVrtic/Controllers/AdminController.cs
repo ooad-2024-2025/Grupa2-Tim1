@@ -43,6 +43,7 @@ namespace PixelVrtic.Controllers
 
             return View();
         }
+        [Authorize(Roles = "Administrator")]
 
         public IActionResult Finansije()
         {
@@ -50,7 +51,7 @@ namespace PixelVrtic.Controllers
             int godina = DateTime.Now.Year;
             double cijenaPoDanu = 20.0;
 
-            if (mjesec == 0) 
+            if (mjesec == 0)
             {
                 mjesec = 12;
                 godina -= 1;
@@ -88,7 +89,7 @@ namespace PixelVrtic.Controllers
                 }
                 else
                 {
-                    postojeca.iznos = izracunatiIznos; 
+                    postojeca.iznos = izracunatiIznos;
                 }
             }
 
@@ -101,19 +102,22 @@ namespace PixelVrtic.Controllers
 
             return View(evidencije);
         }
+        [Authorize(Roles = "Administrator")]
 
         [HttpPost]
-        public IActionResult OznaciKaoPlaceno(int id)
+        public IActionResult TogglePlacanje(int id)
         {
             var zapis = _context.FinansijskaEvidencija.FirstOrDefault(f => f.id == id);
             if (zapis != null)
             {
-                zapis.uplaceno = true;
+                zapis.uplaceno = !zapis.uplaceno;
                 _context.SaveChanges();
             }
 
             return RedirectToAction("Finansije");
         }
+
+
 
     }
 }

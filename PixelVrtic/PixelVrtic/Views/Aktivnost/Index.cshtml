@@ -13,6 +13,7 @@
     var monthName = System.Globalization.CultureInfo.GetCultureInfo("bs-BA").DateTimeFormat.GetMonthName(month);
     var currentYear = ViewBag.Year;
     var currentMonth = ViewBag.Month;
+    bool AdminOrVaspitac = User.IsInRole("Administrator") || User.IsInRole("Vaspitac");
 
     var monthNames = System.Globalization.CultureInfo
         .GetCultureInfo("bs-BA")
@@ -80,7 +81,7 @@
         var isToday = currentDate.Date == today;
 
         <div class="calendar-day @(isToday ? "today" : "")" style="cursor:pointer;"
-             onclick="location.href='@Url.Action("Create", "Aktivnost")?datumPocetka=@currentDate.ToString("yyyy-MM-dd")'">
+             onclick="location.href='@Url.Action(AdminOrVaspitac ? "Create" : "Index", "Aktivnost")?datumPocetka=@currentDate.ToString("yyyy-MM-dd")'">
 
             <div class="date-number">@day</div>
 
@@ -92,7 +93,7 @@
                         @if (ViewBag.IsAuthorizedUser == true)
                         {
                             <div class="activity-dot"
-                                 onclick="event.stopPropagation(); location.href='@Url.Action("Edit", "Aktivnost", new { id = activity.id })'">
+                                 onclick="event.stopPropagation(); location.href='@Url.Action(AdminOrVaspitac ? "Edit" : "Details", "Aktivnost", new { id = activity.id })'">
                             </div>
                         }
                         else

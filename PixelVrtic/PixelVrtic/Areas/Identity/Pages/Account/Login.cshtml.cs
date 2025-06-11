@@ -115,7 +115,7 @@ namespace PixelVrtic.Areas.Identity.Pages.Account
                 var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
                 if (user == null)
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Nepravilne informacije.");
                     return Page();
                 }
                 var result = await _signInManager.PasswordSignInAsync(user, Input.Password, false, lockoutOnFailure: false);
@@ -159,7 +159,7 @@ namespace PixelVrtic.Areas.Identity.Pages.Account
                 {
                     System.Diagnostics.Debug.WriteLine("ovaj drugi :0");
 
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Nepravilne informacije.");
                     return Page();
                 }
             }
