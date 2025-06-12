@@ -154,7 +154,15 @@ namespace PixelVrtic.Controllers
                     else
                         throw;
                 }
-                return RedirectToAction(nameof(Index));
+                if (User.IsInRole("Roditelj"))
+                {
+                    return RedirectToAction("Details", new { id = dijete.id });
+                }
+                else
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+
             }
 
             UcitajRoditeljeUViewData(dijete.roditeljId);

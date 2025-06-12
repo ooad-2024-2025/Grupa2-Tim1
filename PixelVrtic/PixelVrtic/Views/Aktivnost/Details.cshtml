@@ -33,7 +33,11 @@
     </div>
 
     <div class="details-actions">
-        <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-primary">Uredi</a>
+        @if (!User.IsInRole("Roditelj"))
+        {
+            <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-primary">Uredi</a>
+        }
+        
         <a asp-action="Index" class="btn btn-secondary">Nazad na listu</a>
     </div>
 </div>

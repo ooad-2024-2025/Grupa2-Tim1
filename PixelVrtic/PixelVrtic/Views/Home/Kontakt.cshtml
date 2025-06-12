@@ -6,7 +6,7 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         (function(){
-            emailjs.init("USERID"); // zamjeni sa userID
+            emailjs.init("userID"); // zamjeni sa userID
         })();
     </script>
     <style>
@@ -151,7 +151,7 @@
         document.getElementById("kontakt-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-        emailjs.sendForm("SERVICEID", "TEMPLATE_ID", this) // ZAMJENI SERVICEID I TEMPLATEID
+        emailjs.sendForm("serviceID", "templateID", this) // ZAMJENI SERVICEID I TEMPLATEID
                         .then(function() {
                     alert("Poruka uspješno poslana!");
                 }, function(error) {
