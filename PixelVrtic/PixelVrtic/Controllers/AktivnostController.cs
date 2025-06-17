@@ -127,6 +127,7 @@ namespace PixelVrtic.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
+            ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
             PostaviVaspitaceViewData(aktivnost.idKorisnika);
             return View(aktivnost);
         }
@@ -188,6 +189,7 @@ namespace PixelVrtic.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["idGrupe"] = new SelectList(_context.Grupa.ToList(), "id", "naziv", aktivnost.idGrupe);
+            ViewBag.TipAktivnosti = new SelectList(Enum.GetValues(typeof(TipAktivnosti)));
             PostaviVaspitaceViewData(aktivnost.idKorisnika);
             return View(aktivnost);
         }
