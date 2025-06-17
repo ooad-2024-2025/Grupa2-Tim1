@@ -1,12 +1,13 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using PixelVrtic.Controllers;
 using PixelVrtic.Data;
 using PixelVrtic.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.ConfigureApplicationCookie(options =>
+/*builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.IsEssential = true;
     options.Cookie.HttpOnly = true;
@@ -25,7 +26,7 @@ builder.Services.ConfigureApplicationCookie(options =>
         }
         return Task.CompletedTask;
     };
-});
+});*/
 
 
 // Add services to the container.
@@ -41,7 +42,6 @@ options.SignIn.RequireConfirmedAccount = true)
 
 builder.Services.AddSingleton<IzvjestajGeneratorService>();
 builder.Services.AddHostedService(provider => provider.GetRequiredService<IzvjestajGeneratorService>());
-
 
 
 builder.Services.AddControllersWithViews();
