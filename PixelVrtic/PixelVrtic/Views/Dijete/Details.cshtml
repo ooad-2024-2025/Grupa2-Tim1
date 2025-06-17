@@ -43,7 +43,59 @@
         border-radius: 20px;
         padding: 0.5rem 1.5rem;
     }
+
+    .child-switcher {
+        padding-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        font-size: 1.1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .switch-arrow {
+        color: #7ec8e3;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+        .switch-arrow:hover {
+            color: #4ca3ba;
+        }
+
+    .current-child {
+        font-weight: bold;
+        color: #555;
+    }
+
 </style>
+
+@if (ViewBag.SvaDjeca != null && ((List<PixelVrtic.Models.Dijete>)ViewBag.SvaDjeca).Count > 1)
+{
+    var djeca = (List<PixelVrtic.Models.Dijete>)ViewBag.SvaDjeca;
+    var trenutnoDijeteId = (int)ViewBag.TrenutnoDijeteId;
+    var currentIndex = djeca.FindIndex(d => d.id == trenutnoDijeteId);
+    var previous = currentIndex > 0 ? djeca[currentIndex - 1] : null;
+    var next = currentIndex < djeca.Count - 1 ? djeca[currentIndex + 1] : null;
+
+    <div class="child-switcher">
+        @if (previous != null)
+        {
+            <a asp-action="MojeDijete" asp-route-dijeteId="@previous.id" class="switch-arrow">&#8592; @previous.ime</a>
+        }
+
+        <span class="current-child">@djeca[currentIndex].ime</span>
+
+        @if (next != null)
+        {
+            <a asp-action="MojeDijete" asp-route-dijeteId="@next.id" class="switch-arrow">@next.ime &#8594;</a>
+        }
+    </div>
+}
+
 
 <div class="form-container">
     <h2 class="form-title">DETALJI O DJETETU</h2>

@@ -14,10 +14,12 @@ namespace PixelVrtic.Models
 
         [Required(ErrorMessage = "Ime je obavezno.")]
         [StringLength(50, ErrorMessage = "Ime može sadržavati najviše 50 karaktera.")]
+        [RegularExpression(@"^[A-ZĆČŽŠĐa-zćčžšđ\- ]+$", ErrorMessage = "Ime smije sadržavati samo slova, razmake i crtice.")]
         public string ime { get; set; }
 
         [Required(ErrorMessage = "Prezime je obavezno.")]
         [StringLength(50, ErrorMessage = "Prezime može sadržavati najviše 50 karaktera.")]
+        [RegularExpression(@"^[A-ZĆČŽŠĐa-zćčžšđ\- ]+$", ErrorMessage = "Prezime smije sadržavati samo slova, razmake i crtice.")]
         public string prezime { get; set; }
 
         [Required(ErrorMessage = "Datum rođenja je obavezan.")]
@@ -27,6 +29,7 @@ namespace PixelVrtic.Models
 
         [Required(ErrorMessage = "Mjesto rođenja je obavezno.")]
         [StringLength(100, ErrorMessage = "Mjesto rođenja može sadržavati najviše 100 karaktera.")]
+        [RegularExpression(@"^[A-ZĆČŽŠĐa-zćčžšđ\- ]+$", ErrorMessage = "Mjesto rođenja smije sadržavati samo slova, razmake i crtice.")]
         public string mjestoRodenja { get; set; }
 
         [Required(ErrorMessage = "JMBG je obavezan.")]
@@ -41,9 +44,11 @@ namespace PixelVrtic.Models
         public Grupa grupa { get; set; }
 
         [StringLength(500, ErrorMessage = "Zdravstvene napomene mogu sadržavati najviše 500 karaktera.")]
+        [RegularExpression(@"^[A-Za-zĆČŽŠĐćčžšđ0-9\s.,/\-!?()]*$", ErrorMessage = "Zdravstvene napomene sadrže nedozvoljene znakove.")]
         public string zdravstveneNapomene { get; set; }
 
         [StringLength(255, ErrorMessage = "Putanja fotografije može sadržavati najviše 255 karaktera.")]
+     
         public string fotografija { get; set; }
 
         [ForeignKey("Korisnik")]
@@ -53,18 +58,13 @@ namespace PixelVrtic.Models
         [ValidateNever]
         public Korisnik Korisnik { get; set; }
 
-        // Custom validator for birth date
         public static ValidationResult ValidirajDatumRodjenja(DateTime datumRodjenja, ValidationContext context)
         {
             if (datumRodjenja > DateTime.Today)
-            {
                 return new ValidationResult("Datum rođenja ne može biti u budućnosti.");
-            }
 
             if (datumRodjenja < DateTime.Today.AddYears(-7))
-            {
                 return new ValidationResult("Dijete ne može biti starije od 7 godina.");
-            }
 
             return ValidationResult.Success;
         }

@@ -40,12 +40,13 @@ namespace PixelVrtic.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
+                var loweredSearch = search.ToLower();
                 dijeteQuery = dijeteQuery.Where(d =>
-                    d.ime.ToLower().Contains(search.ToLower()) ||
-                    d.prezime.ToLower().Contains(search.ToLower()) ||
-                    d.Korisnik.ime.ToLower().Contains(search.ToLower()) ||
-                    d.Korisnik.prezime.ToLower().Contains(search.ToLower()));
+                    (d.ime + " " + d.prezime).ToLower().Contains(loweredSearch) ||
+                    (d.Korisnik.ime + " " + d.Korisnik.prezime).ToLower().Contains(loweredSearch));
             }
+
+
 
             var dijeca = await dijeteQuery.ToListAsync();
             return View(dijeca);
@@ -154,15 +155,7 @@ namespace PixelVrtic.Controllers
                     else
                         throw;
                 }
-                if (User.IsInRole("Roditelj"))
-                {
-                    return RedirectToAction("Details", new { id = dijete.id });
-                }
-                else
-                {
-                    return RedirectToAction(nameof(Index));
-                }
-
+                return RedirectToAction(nameof(Index));
             }
 
             UcitajRoditeljeUViewData(dijete.roditeljId);
@@ -208,20 +201,32 @@ namespace PixelVrtic.Controllers
             return _context.Dijete.Any(e => e.id == id);
         }
 
-        public async Task<IActionResult> MojeDijete()
+        public async Task<IActionResult> MojeDijete(int? dijeteId)
         {
             var userId = _userManager.GetUserId(User);
 
-            var dijete = await _context.Dijete
+            var djeca = await _context.Dijete
                 .Include(d => d.Korisnik)
                 .Include(d => d.grupa)
-                .FirstOrDefaultAsync(d => d.roditeljId == userId);
+                .Where(d => d.roditeljId == userId)
+                .ToListAsync();
+
+            if (djeca == null || djeca.Count == 0)
+                return NotFound();
+
+            var dijete = dijeteId.HasValue
+                ? djeca.FirstOrDefault(d => d.id == dijeteId.Value)
+                : djeca.First();
 
             if (dijete == null)
                 return NotFound();
 
+            ViewBag.SvaDjeca = djeca;
+            ViewBag.TrenutnoDijeteId = dijete.id;
+
             return View("Details", dijete);
         }
+
         [Authorize(Roles = "Administrator, Vaspitac")]
         private void UcitajRoditeljeUViewData(string selectedRoditeljId = null)
         {

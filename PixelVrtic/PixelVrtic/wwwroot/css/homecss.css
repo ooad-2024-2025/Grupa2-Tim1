@@ -129,16 +129,18 @@ body {
 }
 
 .v1_300 {
-    width: 100%;
+    width: 1330px;
     color: rgba(11,13,14,1);
     position: absolute;
     top: 1805px;
-    left: 176px;
+    left: 236px;
     font-family: Alexandria;
     font-weight: Bold;
     font-size: 48px;
     opacity: 1;
     text-align: center;
+    
+
 }
 
 .v1_301 {
@@ -146,7 +148,7 @@ body {
     color: rgba(131,134,150,1);
     position: absolute;
     top: 1878px;
-    left: 330px;
+    left: 490px;
     font-family: Alexandria;
     font-weight: Regular;
     font-size: 18px;
@@ -195,11 +197,12 @@ body {
 }
 
 .v1_305 {
-    width: 100%;
+    width: 930px;
     color: rgba(11,13,14,1);
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    
+    left: 302px;
     font-family: Alexandria;
     font-weight: Bold;
     font-size: 48px;
@@ -212,7 +215,7 @@ body {
     color: rgba(131,134,150,1);
     position: absolute;
     top: 109px;
-    left: 102px;
+    left: 302px;
     font-family: Alexandria;
     font-weight: Regular;
     font-size: 18px;
@@ -400,7 +403,7 @@ body {
     opacity: 1;
     position: absolute;
     top: 134px;
-    left: 574px;
+    left: 774px;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
     border-bottom-left-radius: 24px;
@@ -424,11 +427,11 @@ body {
 }
 
 .v1_320 {
-    width: 100%;
+    width: 930px;
     color: rgba(11,13,14,1);
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 230px;
     font-family: Alexandria;
     font-weight: Regular;
     font-size: 48px;
@@ -454,7 +457,7 @@ body {
     color: rgba(0,0,0,1);
     position: absolute;
     top: 3217px;
-    left: 779px;
+    left: 979px;
     font-family: Alexandria;
     font-weight: Regular;
     font-size: 32px;
@@ -480,7 +483,7 @@ body {
     color: rgba(131,134,150,1);
     position: absolute;
     top: 3261px;
-    left: 779px;
+    left: 979px;
     font-family: Alexandria;
     font-weight: Regular;
     font-size: 16px;
@@ -506,7 +509,7 @@ body {
     opacity: 1;
     position: absolute;
     top: 3114px;
-    left: 779px;
+    left: 979px;
     border-radius: 50%;
 }
 
@@ -590,7 +593,7 @@ body {
     color: rgba(101,31,255,1);
     position: absolute;
     top: 3330px;
-    left: 779px;
+    left: 979px;
     font-family: Alexandria;
     font-weight: Regular;
     font-size: 16px;
@@ -744,8 +747,8 @@ body {
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 115px;
-    left: 1057px;
+    top: 95px;
+    left: 1087px;
     overflow: hidden;
 }
 
@@ -815,7 +818,7 @@ body {
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 577px;
+    top: 777px;
     left: 1009px;
     overflow: hidden;
 }
@@ -839,7 +842,7 @@ body {
     color: rgba(92,95,110,1);
     position: absolute;
     top: 540px;
-    left: 364px;
+    left: 564px;
     font-family: Alexandria;
     font-weight: Regular;
     font-size: 16px;
@@ -848,7 +851,7 @@ body {
 }
 
 .v1_354 {
-    width: 96px;
+    width: 196px;
     height: 77px;
     background: url("/images/v1_354.png");
     background-repeat: no-repeat;
@@ -856,13 +859,13 @@ body {
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 649px;
-    left: 1277px;
+    top: 689px;
+    left: 1377px;
     overflow: hidden;
 }
 
 .v1_355 {
-    width: 96px;
+    width: 126px;
     height: 77px;
     background: url("/images/v1_355.png");
     background-repeat: no-repeat;
@@ -1601,7 +1604,7 @@ body {
     color: rgba(48,57,114,1);
     position: absolute;
     top: 279px;
-    left: 213px;
+    left: 413px;
     font-family: Poppins;
     font-weight: Bold;
     font-size: 96px;
@@ -1614,9 +1617,10 @@ body {
     color: rgba(252,196,62,1);
     position: absolute;
     top: 400px;
-    left: 452px;
+    left: 852px;
     font-family: Figma Hand;
     font-weight: Bold;
+    font-style: italic;
     font-size: 96px;
     opacity: 1;
     text-align: center;
@@ -1679,7 +1683,7 @@ body {
 }
 
 .v1_429 {
-    width: 199px;
+    width: 329px;
     height: 118px;
     background: url("/images/v1_429.png");
     background-repeat: no-repeat;
@@ -1702,7 +1706,7 @@ body {
     opacity: 1;
     position: absolute;
     top: 2005px;
-    left: 752px;
+    left: 1052px;
     overflow: hidden;
 }
 
@@ -1711,7 +1715,7 @@ body {
 }
 
 .v1_433 {
-    width: 109px;
+    width: 209px;
     height: 70px;
     background: url("/images/v1_433.png");
     background-repeat: no-repeat;
@@ -1733,7 +1737,7 @@ body {
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 131px;
+    top: 211px;
     left: 1368px;
     overflow: hidden;
 }

@@ -44,7 +44,6 @@ namespace PixelVrtic.Controllers
             return View();
         }
         [Authorize(Roles = "Administrator")]
-
         public IActionResult Finansije()
         {
             int mjesec = DateTime.Now.Month - 1;
@@ -63,15 +62,25 @@ namespace PixelVrtic.Controllers
 
             foreach (var roditelj in roditelji)
             {
-                var dijete = _context.Dijete.FirstOrDefault(d => d.roditeljId == roditelj.Id);
-                if (dijete == null) continue;
+                var djeca = _context.Dijete
+                    .Where(d => d.roditeljId == roditelj.Id)
+                    .ToList();
 
-                var prisustva = _context.Prisustvo
-                    .Where(p => p.dijeteId == dijete.id && p.prisutan &&
-                                p.datum.Month == mjesec && p.datum.Year == godina)
-                    .Count();
+                if (djeca.Count == 0) continue;
 
-                double izracunatiIznos = prisustva * cijenaPoDanu;
+                int ukupnoPrisustava = 0;
+
+                foreach (var dijete in djeca)
+                {
+                    int prisustva = _context.Prisustvo
+                        .Where(p => p.dijeteId == dijete.id && p.prisutan &&
+                                    p.datum.Month == mjesec && p.datum.Year == godina)
+                        .Count();
+
+                    ukupnoPrisustava += prisustva;
+                }
+
+                double izracunatiIznos = ukupnoPrisustava * cijenaPoDanu;
 
                 var postojeca = _context.FinansijskaEvidencija
                     .FirstOrDefault(f => f.roditeljId == roditelj.Id && f.mjesec == mjesec && f.godina == godina);

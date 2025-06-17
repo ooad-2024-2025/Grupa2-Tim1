@@ -17,7 +17,7 @@
             <a href="@Url.Action("Details", "Vaspitac", new { id = vaspitac.Id })" class="card-link">
             <div class="card">
                 <div class="avatar">
-                    <img src="~/images/@vaspitac.fotografija" alt="Slika djeteta" width="100" height="100" />
+                    <img src="~/images/@vaspitac.fotografija" alt="Slika vaspitaca" width="100" height="100" />
                 </div>
                 <h2 class="name" style="color: #303053;">@vaspitac.ime @vaspitac.prezime</h2>
                 <p class="group">
@@ -25,11 +25,14 @@
                         ? grupe[vaspitac.idGrupe.Value]
                         : "/")
                 </p>
+                <!--
                 <div class="card-actions">
                     <button class="icon-btn">📞</button>
                     <button class="icon-btn">💬</button>
                     <button class="icon-btn">📧</button>
                 </div>
+
+                -->
             </div>
             </a>
         }
@@ -38,7 +41,7 @@
     <div class="pagination">
         <span>Prikazuje 1-@Model.Count od @Model.Count</span>
         <div class="pagination-controls">
-            <a class="page current">1</a>
+            <a class="page-btn active">1</a>
         </div>
     </div>
 </div>
@@ -177,5 +180,18 @@
 
         .page.current {
             background-color: #4e4e8e;
+        }
+
+    .page-btn {
+        background-color: #f0f0f0;
+        border: none;
+        margin: 0 0.25rem;
+        padding: 0.5rem 1rem;
+        border-radius: 50%;
+    }
+
+        .page-btn.active {
+            background-color: #c7f9ff;
+            font-weight: bold;
         }
 </style>
