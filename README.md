@@ -18,8 +18,8 @@ Moderni web‑sistem za upravljanje vrtićem, razvijen za akademsku godinu 2024/
 
 ## 🧪 Pristupni podaci (za testiranje)
 
-| Uloga         | Korisničko ime | Lozinka       | Opis                                                  |
+| Uloga         | Email | Lozinka       | Opis                                                  |
 |---------------|----------------|----------------|--------------------------------------------------------|
-| **Administrator** | `admin`        | `Admin@123`    | Puna kontrola nad aplikacijom i korisnicima            |
-| **Roditelj**      | `roditelj1`    | `Roditelj@123` | Može pregledati podatke i aktivnosti svoje djece       |
-| **Vaspitač**      | `vaspitac1`    | `Vaspitac@123` | Može unositi aktivnosti i upravljati članovima grupe   |
+| **Administrator** | `admin@pixel`        | `bp123!`    | Puna kontrola nad aplikacijom i korisnicima            |
+| **Roditelj**      | `roditelj2@pixel`    | `Test123!` | Može pregledati podatke i aktivnosti svoje djece       |
+| **Vaspitač**      | `vaspitacL@pixel`    | `Test123!` | Može unositi aktivnosti i upravljati članovima grupe   |
