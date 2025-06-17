@@ -1,6 +1,6 @@
 # Grupa2-Tim1
 
-# 📚 Pixel Vrtic
+# 📚 Pixel Vrtic 🎨
 
 Moderni web‑sistem za upravljanje vrtićem, razvijen za akademsku godinu 2024/2025.
 
