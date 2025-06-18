@@ -7,7 +7,7 @@ using PixelVrtic.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-/*builder.Services.ConfigureApplicationCookie(options =>
+builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.IsEssential = true;
     options.Cookie.HttpOnly = true;
@@ -26,7 +26,7 @@ var builder = WebApplication.CreateBuilder(args);
         }
         return Task.CompletedTask;
     };
-});*/
+});
 
 
 // Add services to the container.
