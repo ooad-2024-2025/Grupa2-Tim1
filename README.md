@@ -20,6 +20,8 @@ URL: <a href="http://lamina-001-site1.otempurl.com/">PIXEL WEBSITE</a>
 ## 🔗 Konekcijski string
 Data Source=SQL6032.site4now.net;Initial Catalog=db_ab92da_ooad25;User Id=db_ab92da_ooad25_admin;Password=123bucapotoK 
 
+---
+
 ## 🧪 Pristupni podaci (za testiranje)
 
 | Uloga         | Email | Lozinka       | Opis                                                  |
