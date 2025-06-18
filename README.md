@@ -4,7 +4,8 @@
 
 Moderni web‑sistem za upravljanje vrtićem, razvijen za akademsku godinu 2024/2025.
 
-URL: http://lamina-001-site1.otempurl.com/
+URL: <a href="http://lamina-001-site1.otempurl.com/">PIXEL WEBSITE</a>
+
 ---
 
 ## 🔧 Ključne funkcionalnosti
@@ -17,6 +18,7 @@ URL: http://lamina-001-site1.otempurl.com/
 ---
 
 ## 🔗 Konekcijski string
+Data Source=SQL6032.site4now.net;Initial Catalog=db_ab92da_ooad25;User Id=db_ab92da_ooad25_admin;Password=123bucapotoK 
 
 ## 🧪 Pristupni podaci (za testiranje)
 
