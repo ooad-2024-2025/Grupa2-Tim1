@@ -3,6 +3,7 @@
 # 📚 Pixel Vrtic 🎨
 
 Moderni web‑sistem za upravljanje vrtićem, razvijen za akademsku godinu 2024/2025.
+
 URL: http://lamina-001-site1.otempurl.com/
 ---
 
